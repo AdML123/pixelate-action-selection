@@ -1,4 +1,5 @@
 import sys
+import subprocess
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "code"))
@@ -402,3 +403,28 @@ def test_pixelate_severity_table_uses_all_five_severities():
     assert "Gain" in rendered
     assert "LCB" in rendered
     _assert_no_empty_cells(rendered)
+
+
+def test_default_table_generator_outputs_only_manuscript_tables(tmp_path):
+    outdir = tmp_path / "tables"
+
+    completed = subprocess.run(
+        [
+            sys.executable,
+            "code/make_tables.py",
+            "--outdir",
+            str(outdir),
+        ],
+        cwd=Path(__file__).resolve().parents[1],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+
+    assert completed.returncode == 0
+    assert {path.name for path in outdir.glob("*.tex")} == {
+        "table_pixelate_primary.tex",
+        "table_main.tex",
+        "table_ablation.tex",
+        "table_pixelate_severity.tex",
+    }

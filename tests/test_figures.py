@@ -2,61 +2,19 @@ import sys
 import subprocess
 from pathlib import Path
 
-import pandas as pd
 import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "code"))
 
-from pixelate_router.figures import (
-    export_pipeline_diagram,
-    export_radial_spectra,
-    export_severity_curves,
-)
+EXPECTED_MANUSCRIPT_FIGURES = {
+    "figure_case_mechanism.pdf",
+    "figure_residual_routing.pdf",
+    "figure_pixelate_severity.pdf",
+}
 
 
-def _assert_exports_exist(prefix: Path):
-    assert prefix.with_suffix(".svg").exists()
-    assert prefix.with_suffix(".pdf").exists()
-    assert prefix.with_suffix(".png").exists()
-
-
-def test_export_radial_spectra_creates_publication_files(tmp_path):
-    spectra = pd.DataFrame(
-        {
-            "radius": [0.0, 0.5, 1.0, 0.0, 0.5, 1.0],
-            "energy": [0.1, 0.3, 0.6, 0.6, 0.3, 0.1],
-            "corruption": ["Gaussian noise"] * 3 + ["Fog"] * 3,
-        }
-    )
-
-    prefix = tmp_path / "figure1_radial_spectra"
-    export_radial_spectra(spectra, prefix)
-
-    _assert_exports_exist(prefix)
-
-
-def test_export_pipeline_diagram_creates_publication_files(tmp_path):
-    prefix = tmp_path / "figure2_pipeline"
-
-    export_pipeline_diagram(prefix)
-
-    _assert_exports_exist(prefix)
-
-
-def test_export_severity_curves_creates_publication_files(tmp_path):
-    curves = pd.DataFrame(
-        {
-            "corruption": ["Gaussian noise"] * 6,
-            "severity": [1, 2, 3, 1, 2, 3],
-            "config": ["config_a", "config_a", "config_a", "config_b", "config_b", "config_b"],
-            "accuracy": [62.0, 66.0, 70.0, 68.0, 65.0, 61.0],
-        }
-    )
-
-    prefix = tmp_path / "figure3_severity_curves"
-    export_severity_curves(curves, prefix)
-
-    _assert_exports_exist(prefix)
+def _generated_pdfs(outdir: Path) -> set[str]:
+    return {path.name for path in outdir.glob("*.pdf")}
 
 
 def test_imagenetc_figures_generate_without_real_case_data(tmp_path):
@@ -76,9 +34,7 @@ def test_imagenetc_figures_generate_without_real_case_data(tmp_path):
     )
 
     assert completed.returncode == 0
-    assert (outdir / "figure_case_mechanism.pdf").exists()
-    assert (outdir / "figure_residual_routing.pdf").exists()
-    assert (outdir / "figure_pixelate_severity.pdf").exists()
+    assert _generated_pdfs(outdir) == EXPECTED_MANUSCRIPT_FIGURES
 
 
 def test_imagenetc_figures_can_require_real_case_data(tmp_path):
@@ -126,6 +82,21 @@ def test_imagenetc_figures_generate_redesigned_outputs(tmp_path):
     )
 
     assert completed.returncode == 0
-    assert (outdir / "figure_case_mechanism.pdf").exists()
-    assert (outdir / "figure_residual_routing.pdf").exists()
-    assert (outdir / "figure_pixelate_severity.pdf").exists()
+    assert _generated_pdfs(outdir) == EXPECTED_MANUSCRIPT_FIGURES
+
+
+def test_figure_generator_has_no_legacy_pipeline_or_radial_exports():
+    source = (Path(__file__).resolve().parents[1] / "code" / "make_imagenetc_figures.py").read_text(
+        encoding="utf-8"
+    )
+
+    forbidden = [
+        "figure_" + "pipeline.pdf",
+        "figure_" + "radial_spectra.pdf",
+        "def make_" + "pipeline_figure",
+        "def make_" + "radial_spectra",
+        "def " + "radial_spectrum",
+        "inset" + "_axes",
+    ]
+    for phrase in forbidden:
+        assert phrase not in source

@@ -61,8 +61,9 @@ The generated files map directly to the manuscript:
 | Fig. 2 | `figures/imagenetc/figure_residual_routing.pdf` |
 | Fig. 3 | `figures/imagenetc/figure_pixelate_severity.pdf` |
 
-Archive-only helpers may also emit feature, oracle, timing, or action-share
-tables for inspection. Those files are not main-text manuscript tables.
+For diagnostic checks outside the main text, add `--include-archive` to
+`code/make_tables.py` to write feature, oracle, timing, and action-share
+tables into a separate inspection directory.
 
 ## Full Rerun
 

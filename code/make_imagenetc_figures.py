@@ -59,9 +59,7 @@ def _save_pdf(fig, path: Path, **kwargs) -> None:
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Generate ImageNet-C manuscript figures.")
     parser.add_argument("--outdir", required=True)
-    parser.add_argument("--spectra-source", default="data/source/figure_radial_spectra.csv")
-    parser.add_argument("--curves-source", default="data/source/figure_severity_curves.csv")
-    parser.add_argument("--digital-root")
+    parser.add_argument("--curves-source", default="data/source/figure_pixelate_severity.csv")
     parser.add_argument("--case-digital-root")
     parser.add_argument(
         "--require-case-digital-root",
@@ -77,7 +75,6 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--ablation-json", default="data/derived/imagenetc/ablation_report.json")
     parser.add_argument("--features-root-test")
     parser.add_argument("--router-checkpoint")
-    parser.add_argument("--spectra-images", type=int, default=50)
     return parser
 
 
@@ -342,165 +339,61 @@ def make_residual_routing_figure(feature_json: Path, ablation_json: Path, outdir
     plt.close(fig)
 
 
-def make_pipeline_figure(outdir: Path, plt) -> None:
-    from matplotlib.patches import FancyArrowPatch, Rectangle
-
-    fig, ax = plt.subplots(figsize=(3.45, 1.30))
-    ax.set_axis_off()
-
-    def box(x: float, y: float, w: float, h: float, text: str, face: str) -> None:
-        patch = Rectangle((x, y), w, h, linewidth=0.75, edgecolor="#333333", facecolor=face)
-        ax.add_patch(patch)
-        ax.text(x + w / 2, y + h / 2, text, ha="center", va="center", fontsize=7.8, linespacing=1.05)
-
-    def arrow(x0: float, y0: float, x1: float, y1: float) -> None:
-        ax.add_patch(
-            FancyArrowPatch(
-                (x0, y0),
-                (x1, y1),
-                arrowstyle="-|>",
-                mutation_scale=8,
-                linewidth=0.75,
-                color="#333333",
-            )
-        )
-
-    box(0.02, 0.58, 0.14, 0.24, "pixelated\ninput", "#F7F7F7")
-    box(0.22, 0.70, 0.18, 0.20, "JPEG\nresidual", "#E8F1FA")
-    box(0.22, 0.36, 0.18, 0.20, "DnCNN\ndefault", "#EEF6EE")
-    box(0.47, 0.58, 0.18, 0.24, "action\nscore", "#F2EAF6")
-    box(0.75, 0.58, 0.22, 0.24, "ResNet-50\noutput", "#F7F7F7")
-    ax.text(0.47, 0.32, "switch only when score exceeds threshold", ha="center", va="center", fontsize=7.4)
-
-    arrow(0.16, 0.70, 0.22, 0.80)
-    arrow(0.16, 0.66, 0.22, 0.46)
-    arrow(0.40, 0.80, 0.47, 0.70)
-    arrow(0.40, 0.46, 0.47, 0.66)
-    arrow(0.65, 0.70, 0.75, 0.70)
-    ax.set_xlim(0, 1)
-    ax.set_ylim(0, 1)
-    _save_pdf(fig, outdir / "figure_pipeline.pdf", bbox_inches="tight", pad_inches=0.01)
-    plt.close(fig)
-
-
-def make_radial_spectra(digital_root: str, n_images: int, outdir: Path, plt) -> None:
-    fig, ax = plt.subplots(figsize=(3.45, 2.25))
-    for corr, label in CORRUPTION_LABELS.items():
-        records = iter_image_records(digital_root, corr, 3, indices=range(n_images))
-        curves = []
-        for record in records[:n_images]:
-            image = load_rgb_float(record.path)
-            radius, energy = radial_spectrum(image, n_bins=32)
-            curves.append(energy)
-        median = np.median(np.vstack(curves), axis=0)
-        ax.plot(radius, median, lw=1.45, color=COLORS[corr], label=label)
-    ax.set_yscale("log")
-    ax.set_xlabel("Normalized radial frequency")
-    ax.set_ylabel("Median spectral energy")
-    ax.set_xlim(0.0, 0.5)
-    ax.grid(axis="y", color="#E5E5E5", lw=0.45)
-    ax.legend(ncol=2, loc="upper right", borderaxespad=0.2)
-    fig.tight_layout(pad=0.5)
-    _save_pdf(fig, outdir / "figure_radial_spectra.pdf", bbox_inches="tight")
-    plt.close(fig)
-
-
-def make_radial_spectra_from_csv(source_csv: Path, outdir: Path, plt) -> None:
-    rows = _read_csv_rows(source_csv)
-    fig, ax = plt.subplots(figsize=(3.45, 2.25))
-    for corr, label in CORRUPTION_LABELS.items():
-        curve = [row for row in rows if row["corruption"] == corr]
-        curve.sort(key=lambda row: float(row["radius"]))
-        radius = [float(row["radius"]) for row in curve]
-        energy = [float(row["energy"]) for row in curve]
-        ax.plot(radius, energy, lw=1.45, color=COLORS[corr], label=label)
-    ax.set_yscale("log")
-    ax.set_xlabel("Normalized radial frequency")
-    ax.set_ylabel("Median spectral energy")
-    ax.set_xlim(0.0, 0.5)
-    ax.grid(axis="y", color="#E5E5E5", lw=0.45)
-    ax.legend(ncol=2, loc="upper right", borderaxespad=0.2)
-    fig.tight_layout(pad=0.5)
-    _save_pdf(fig, outdir / "figure_radial_spectra.pdf", bbox_inches="tight")
-    plt.close(fig)
-
-
 def make_severity_curves(action: dict, action_csv: str, features_root: str, router_checkpoint: str, outdir: Path, plt) -> None:
-    fig, ax = plt.subplots(figsize=(3.45, 2.55))
+    fig, axes = plt.subplots(2, 1, figsize=(3.45, 3.55), sharex=True)
     legend_handles, legend_labels = _plot_severity_panel(
-        ax,
+        axes[0],
         action["summaries"]["test"]["pixelate"],
         severities=[1, 2, 3, 4, 5],
         router_curve=_router_curve("pixelate", action_csv, features_root, router_checkpoint),
         title="Pixelate",
     )
-    ax.set_xlabel("Severity")
-    ax.set_ylabel("Top-1 accuracy (%)")
-    inset = ax.inset_axes([0.56, 0.13, 0.39, 0.34])
     _plot_severity_panel(
-        inset,
+        axes[1],
         action["summaries"]["test"]["elastic_transform"],
         severities=[1, 2, 3, 4, 5],
         router_curve=_router_curve("elastic_transform", action_csv, features_root, router_checkpoint),
         title="Elastic control",
-        compact=True,
     )
+    axes[0].set_ylabel("Top-1 accuracy (%)")
+    axes[1].set_ylabel("Top-1 accuracy (%)")
+    axes[1].set_xlabel("Severity")
     fig.legend(
         legend_handles,
         legend_labels,
-        loc="lower center",
+        loc="upper center",
         ncol=4,
-        bbox_to_anchor=(0.5, 0.965),
+        bbox_to_anchor=(0.5, 0.995),
         handlelength=1.1,
         columnspacing=0.7,
         borderaxespad=0.0,
     )
-    fig.tight_layout(rect=(0.0, 0.0, 1.0, 0.88), pad=0.45)
+    fig.tight_layout(rect=(0.0, 0.0, 1.0, 0.92), pad=0.45, h_pad=0.55)
     _save_pdf(fig, outdir / "figure_pixelate_severity.pdf", bbox_inches="tight")
     plt.close(fig)
 
 
 def make_severity_curves_from_csv(source_csv: Path, outdir: Path, plt) -> None:
     rows = _read_csv_rows(source_csv)
-    fig, ax = plt.subplots(figsize=(3.45, 2.55))
-    legend_handles, legend_labels = _plot_severity_rows(ax, rows, "pixelate", "Pixelate")
-    ax.set_xlabel("Severity")
-    ax.set_ylabel("Top-1 accuracy (%)")
-    inset = ax.inset_axes([0.56, 0.13, 0.39, 0.34])
-    _plot_severity_rows(inset, rows, "elastic_transform", "Elastic control", compact=True)
+    fig, axes = plt.subplots(2, 1, figsize=(3.45, 3.55), sharex=True)
+    legend_handles, legend_labels = _plot_severity_rows(axes[0], rows, "pixelate", "Pixelate")
+    _plot_severity_rows(axes[1], rows, "elastic_transform", "Elastic control")
+    axes[0].set_ylabel("Top-1 accuracy (%)")
+    axes[1].set_ylabel("Top-1 accuracy (%)")
+    axes[1].set_xlabel("Severity")
     fig.legend(
         legend_handles,
         legend_labels,
-        loc="lower center",
+        loc="upper center",
         ncol=4,
-        bbox_to_anchor=(0.5, 0.965),
+        bbox_to_anchor=(0.5, 0.995),
         handlelength=1.1,
         columnspacing=0.7,
         borderaxespad=0.0,
     )
-    fig.tight_layout(rect=(0.0, 0.0, 1.0, 0.88), pad=0.45)
+    fig.tight_layout(rect=(0.0, 0.0, 1.0, 0.92), pad=0.45, h_pad=0.55)
     _save_pdf(fig, outdir / "figure_pixelate_severity.pdf", bbox_inches="tight")
     plt.close(fig)
-
-
-def radial_spectrum(image: np.ndarray, n_bins: int = 32) -> tuple[np.ndarray, np.ndarray]:
-    image = np.asarray(image, dtype=np.float32)
-    energy = np.abs(np.fft.fft2(image, axes=(0, 1))) ** 2
-    energy = np.fft.fftshift(energy.mean(axis=2))
-    height, width = energy.shape
-    fy = np.fft.fftshift(np.fft.fftfreq(height))
-    fx = np.fft.fftshift(np.fft.fftfreq(width))
-    yy, xx = np.meshgrid(fy, fx, indexing="ij")
-    radius = np.sqrt(xx**2 + yy**2)
-    bins = np.linspace(0.0, 0.5, n_bins + 1)
-    centers = 0.5 * (bins[:-1] + bins[1:])
-    values = np.zeros(n_bins, dtype=np.float64)
-    for index in range(n_bins):
-        mask = (radius >= bins[index]) & (radius < bins[index + 1])
-        if np.any(mask):
-            values[index] = float(np.mean(energy[mask]))
-    values[values <= 0.0] = np.min(values[values > 0.0]) if np.any(values > 0.0) else 1e-12
-    return centers, values
 
 
 def _plot_severity_panel(

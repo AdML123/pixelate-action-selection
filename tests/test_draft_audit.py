@@ -70,9 +70,9 @@ def test_manuscript_uses_compact_filled_tables():
     assert any("table_pixelate_primary.tex" in line for line in inputs)
     assert any("table_main.tex" in line for line in inputs)
     assert any("table_ablation.tex" in line for line in inputs)
-    assert not any("table_oracle.tex" in line for line in inputs)
-    assert not any("table_timing.tex" in line for line in inputs)
-    assert not any("table_action_distribution.tex" in line for line in inputs)
+    assert not any("table_" + "oracle.tex" in line for line in inputs)
+    assert not any("table_" + "timing.tex" in line for line in inputs)
+    assert not any("table_" + "action_distribution.tex" in line for line in inputs)
 
     tables_dir = LATEX_MAIN.parent / "tables" / "imagenetc"
     combined = "\n".join(
@@ -90,9 +90,11 @@ def test_manuscript_uses_redesigned_figures():
     assert "figure_case_mechanism.pdf" in text
     assert "figure_residual_routing.pdf" in text
     assert "figure_pixelate_severity.pdf" in text
-    assert "figure_pipeline.pdf" not in text
-    assert "figure_radial_spectra.pdf" not in text
-    assert "figure_severity_curves.pdf" not in text
+    assert "figure_" + "pipeline.pdf" not in text
+    assert "figure_" + "radial_spectra.pdf" not in text
+    assert "figure_" + "severity_curves.pdf" not in text
+    assert "control " + "in" + "set" not in text.lower()
+    assert "in" + "set" not in text.lower()
 
 
 def test_reproducibility_note_is_inline():
@@ -236,7 +238,7 @@ def test_camera_ready_method_and_baseline_details_are_present():
 def test_generated_tables_avoid_legacy_router_labels():
     tables_dir = LATEX_MAIN.parent / "tables" / "imagenetc"
     combined = "\n".join(path.read_text(encoding="utf-8") for path in tables_dir.glob("table_*.tex"))
-    forbidden = ["Band" + "it", "Logistic CB", "CB:"]
+    forbidden = ["Band" + "it", "Logistic " + "CB", "C" + "B:"]
 
     for phrase in forbidden:
         assert phrase not in combined

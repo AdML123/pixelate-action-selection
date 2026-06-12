@@ -14,10 +14,8 @@ data/
     detector_baseline_report.json
     timing_report.json
   source/
-    figure_radial_spectra.csv
-    figure_severity_curves.csv
+    figure_pixelate_severity.csv
     table_pixelate_severity.csv
-    table_pixelate_severity.tex
 ```
 
 Raw ImageNet-C images, model checkpoints, per-image action CSV files, feature

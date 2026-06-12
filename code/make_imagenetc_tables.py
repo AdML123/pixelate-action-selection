@@ -38,6 +38,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--loco-json", default="data/derived/imagenetc/loco_report.json")
     parser.add_argument("--severity-csv", default="data/source/table_pixelate_severity.csv")
     parser.add_argument("--timing-json", default="data/derived/imagenetc/timing_report.json")
+    parser.add_argument(
+        "--include-archive",
+        action="store_true",
+        help="Also write diagnostic tables that are not used in the manuscript main text.",
+    )
     return parser
 
 
@@ -45,25 +50,24 @@ def main() -> int:
     args = build_parser().parse_args()
     outdir = Path(args.outdir)
     outdir.mkdir(parents=True, exist_ok=True)
-    oracle = _load(args.oracle_json)
     action = _load(args.action_json)
-    feature = _load(args.feature_json)
-    validation = _load(args.validation_json)
     ablation = _load(args.ablation_json)
     detector = _load(args.detector_json)
     ablation = with_detector_policy(ablation, detector)
-    loco = _load(args.loco_json)
     severity_rows = _read_csv_rows(Path(args.severity_csv))
-    timing = _load(args.timing_json)
 
-    _write(outdir / "table_oracle.tex", table_oracle(oracle, action))
     _write(outdir / "table_pixelate_primary.tex", table_pixelate_primary(action, ablation))
-    _write(outdir / "table_features.tex", table_features(feature))
     _write(outdir / "table_main.tex", table_main(action, ablation))
-    _write(outdir / "table_action_distribution.tex", table_action_distribution(ablation))
     _write(outdir / "table_ablation.tex", table_ablation(ablation))
     _write(outdir / "table_pixelate_severity.tex", table_pixelate_severity_from_rows(severity_rows))
-    _write(outdir / "table_timing.tex", table_timing(timing))
+    if args.include_archive:
+        oracle = _load(args.oracle_json)
+        feature = _load(args.feature_json)
+        timing = _load(args.timing_json)
+        _write(outdir / "table_oracle.tex", table_oracle(oracle, action))
+        _write(outdir / "table_features.tex", table_features(feature))
+        _write(outdir / "table_action_distribution.tex", table_action_distribution(ablation))
+        _write(outdir / "table_timing.tex", table_timing(timing))
     print(f"wrote tables to {outdir}")
     return 0
 
