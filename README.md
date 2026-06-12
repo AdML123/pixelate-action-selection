@@ -36,16 +36,17 @@ JSON/CSV artifacts, generated tables, generated figures, tests, and
 External resources for a full image-level rerun:
 
 - ImageNet-C digital corruptions: download `digital.tar` from the official
-  ImageNet-C Zenodo record, then extract the `contrast`, `elastic_transform`,
-  `pixelate`, and `jpeg_compression` directories under the path used as
-  `digital_root`.
+  ImageNet-C Zenodo record at `https://zenodo.org/records/2235448`, then
+  extract the `contrast`, `elastic_transform`, `pixelate`, and
+  `jpeg_compression` directories under the path used as `digital_root`.
 - DnCNN color blind checkpoint: clone KAIR from
   `https://github.com/cszn/KAIR`, then run
   `python main_download_pretrained_models.py --models "dncnn_color_blind.pth" --model_dir model_zoo`
   inside the KAIR checkout.
 - ResNet-50 checkpoint: use TorchVision `ResNet50_Weights.IMAGENET1K_V1`, or
   place the matching state dict at the `resnet50_checkpoint` path in
-  `configs/local.yaml`.
+  `configs/local.yaml`. TorchVision documents the weight enum at
+  `https://pytorch.org/vision/stable/models/generated/torchvision.models.resnet50.html`.
 
 ## Quick Verification
 
