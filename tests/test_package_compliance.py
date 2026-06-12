@@ -13,7 +13,7 @@ def _text_files():
             continue
         if ignored_dirs.intersection(path.parts):
             continue
-        if path.name in ignored_names or path.name in {Path(__file__).name, "test_draft_audit.py"}:
+        if path.name in ignored_names or path.name == Path(__file__).name:
             continue
         if path.suffix.lower() in ignored_suffixes:
             continue
@@ -61,6 +61,34 @@ def test_manifest_does_not_include_git_metadata():
     ]
 
     assert all(".git" not in entry.parts for entry in entries)
+
+
+def test_public_package_excludes_internal_manuscript_audits():
+    forbidden = [
+        PACKAGE_ROOT / "tests" / "test_draft_audit.py",
+        PACKAGE_ROOT / "tests" / "test_latex_source.py",
+        PACKAGE_ROOT / "code" / "pixelate_router" / "draft_audit.py",
+    ]
+
+    assert [str(path.relative_to(PACKAGE_ROOT)) for path in forbidden if path.exists()] == []
+
+
+def test_public_tests_do_not_depend_on_submission_bundle_layout():
+    forbidden_terms = [
+        "latex_source/main.tex",
+        "LaTeX source is not included",
+        "draft_audit",
+    ]
+    offenders = []
+    for path in (PACKAGE_ROOT / "tests").glob("test_*.py"):
+        if path.name == Path(__file__).name:
+            continue
+        text = path.read_text(encoding="utf-8", errors="ignore")
+        for term in forbidden_terms:
+            if term in text:
+                offenders.append(f"{path.relative_to(PACKAGE_ROOT)}: {term}")
+
+    assert offenders == []
 
 
 def test_derived_artifacts_do_not_expose_private_work_paths():
