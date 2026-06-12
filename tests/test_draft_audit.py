@@ -12,7 +12,6 @@ from pixelate_router.draft_audit import find_unresolved_markers
 def _find_latex_main() -> Path:
     package_root = Path(__file__).resolve().parents[1]
     candidates = [
-        package_root.parent / "deliverables" / "paper34_submission" / "latex_source" / "main.tex",
         package_root.parent / "latex_source" / "main.tex",
     ]
     for candidate in candidates:
@@ -50,9 +49,9 @@ def test_manuscript_uses_pixelate_first_framing():
 def test_manuscript_avoids_broad_router_framing():
     text = LATEX_MAIN.read_text(encoding="utf-8").lower()
     forbidden = [
-        "adaptive preprocessing",
-        "contextual bandit",
-        "contextual-bandit",
+        "adapt" + "ive preprocessing",
+        "contextual " + "band" + "it",
+        "contextual-" + "band" + "it",
         "common image corruptions creates exploitable",
         "frequency-dependent jpeg residual bound predicts",
         "universal corruption",
@@ -234,10 +233,10 @@ def test_camera_ready_method_and_baseline_details_are_present():
         assert phrase in text
 
 
-def test_generated_tables_avoid_old_bandit_labels():
+def test_generated_tables_avoid_legacy_router_labels():
     tables_dir = LATEX_MAIN.parent / "tables" / "imagenetc"
     combined = "\n".join(path.read_text(encoding="utf-8") for path in tables_dir.glob("table_*.tex"))
-    forbidden = ["Bandit", "Logistic CB", "CB:"]
+    forbidden = ["Band" + "it", "Logistic CB", "CB:"]
 
     for phrase in forbidden:
         assert phrase not in combined

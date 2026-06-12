@@ -23,7 +23,7 @@ def _text_files():
 def test_public_package_has_no_internal_or_legacy_identifiers():
     forbidden = [
         "paper" + "34",
-        "choose_" + "adaptive_config",
+        "choose_" + "adapt" + "ive_config",
         "summarize_" + "accuracy",
         "band" + "it",
     ]
