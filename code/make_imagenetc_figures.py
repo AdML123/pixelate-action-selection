@@ -44,6 +44,16 @@ ACTION_LABELS = {
 }
 INK = "#2F2F2F"
 GRID = "#E6E6E6"
+PDF_METADATA = {
+    "Creator": "pixelate-action-selection",
+    "Producer": "Matplotlib",
+    "CreationDate": None,
+    "ModDate": None,
+}
+
+
+def _save_pdf(fig, path: Path, **kwargs) -> None:
+    fig.savefig(path, metadata=PDF_METADATA, **kwargs)
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -258,7 +268,7 @@ def make_case_mechanism_figure(args: argparse.Namespace, outdir: Path, plt) -> N
         columnspacing=0.55,
         borderaxespad=0.0,
     )
-    fig.savefig(outdir / "figure_case_mechanism.pdf", bbox_inches="tight", pad_inches=0.02)
+    _save_pdf(fig, outdir / "figure_case_mechanism.pdf", bbox_inches="tight", pad_inches=0.02)
     plt.close(fig)
 
 
@@ -328,7 +338,7 @@ def make_residual_routing_figure(feature_json: Path, ablation_json: Path, outdir
         borderaxespad=0.0,
     )
     fig.subplots_adjust(left=0.13, right=0.98, bottom=0.08, top=0.97, hspace=0.32)
-    fig.savefig(outdir / "figure_residual_routing.pdf", bbox_inches="tight", pad_inches=0.02)
+    _save_pdf(fig, outdir / "figure_residual_routing.pdf", bbox_inches="tight", pad_inches=0.02)
     plt.close(fig)
 
 
@@ -369,7 +379,7 @@ def make_pipeline_figure(outdir: Path, plt) -> None:
     arrow(0.65, 0.70, 0.75, 0.70)
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 1)
-    fig.savefig(outdir / "figure_pipeline.pdf", bbox_inches="tight", pad_inches=0.01)
+    _save_pdf(fig, outdir / "figure_pipeline.pdf", bbox_inches="tight", pad_inches=0.01)
     plt.close(fig)
 
 
@@ -391,7 +401,7 @@ def make_radial_spectra(digital_root: str, n_images: int, outdir: Path, plt) -> 
     ax.grid(axis="y", color="#E5E5E5", lw=0.45)
     ax.legend(ncol=2, loc="upper right", borderaxespad=0.2)
     fig.tight_layout(pad=0.5)
-    fig.savefig(outdir / "figure_radial_spectra.pdf", bbox_inches="tight")
+    _save_pdf(fig, outdir / "figure_radial_spectra.pdf", bbox_inches="tight")
     plt.close(fig)
 
 
@@ -411,7 +421,7 @@ def make_radial_spectra_from_csv(source_csv: Path, outdir: Path, plt) -> None:
     ax.grid(axis="y", color="#E5E5E5", lw=0.45)
     ax.legend(ncol=2, loc="upper right", borderaxespad=0.2)
     fig.tight_layout(pad=0.5)
-    fig.savefig(outdir / "figure_radial_spectra.pdf", bbox_inches="tight")
+    _save_pdf(fig, outdir / "figure_radial_spectra.pdf", bbox_inches="tight")
     plt.close(fig)
 
 
@@ -446,7 +456,7 @@ def make_severity_curves(action: dict, action_csv: str, features_root: str, rout
         borderaxespad=0.0,
     )
     fig.tight_layout(rect=(0.0, 0.0, 1.0, 0.88), pad=0.45)
-    fig.savefig(outdir / "figure_pixelate_severity.pdf", bbox_inches="tight")
+    _save_pdf(fig, outdir / "figure_pixelate_severity.pdf", bbox_inches="tight")
     plt.close(fig)
 
 
@@ -469,7 +479,7 @@ def make_severity_curves_from_csv(source_csv: Path, outdir: Path, plt) -> None:
         borderaxespad=0.0,
     )
     fig.tight_layout(rect=(0.0, 0.0, 1.0, 0.88), pad=0.45)
-    fig.savefig(outdir / "figure_pixelate_severity.pdf", bbox_inches="tight")
+    _save_pdf(fig, outdir / "figure_pixelate_severity.pdf", bbox_inches="tight")
     plt.close(fig)
 
 
