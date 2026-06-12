@@ -1,0 +1,8 @@
+root: ..
+digital_root: data/digital
+kair_root: external/KAIR
+dncnn_checkpoint: model_zoo/dncnn_color_blind.pth
+resnet50_checkpoint: model_zoo/resnet50-11ad3fa6.pth
+derived_dir: data/derived/imagenetc
+table_dir: tables/imagenetc
+figure_dir: figures/imagenetc

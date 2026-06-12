@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use this reproduction package, please cite the associated paper."
+title: "Frequency-Structured Preprocessing Choice for ImageNet-C Digital Corruptions"
+authors:
+  - family-names: "Anonymous"
+    given-names: "Authors"
+year: 2026
+license: MIT

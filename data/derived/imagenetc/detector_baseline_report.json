@@ -1,0 +1,617 @@
+{
+  "command": "code\\evaluate_corruption_detector.py --features-root data\\local_review\\features --test-features-root data\\local_review\\features_test --action-csv data\\local_review\\action_eval\\action_eval.csv --outdir data\\derived\\imagenetc --feature-set all",
+  "diagnostic_true_label_oracle": {
+    "accuracy": 55.610499999999995,
+    "action_distribution": {
+      "config_a": {
+        "count": 50000,
+        "share": 0.25
+      },
+      "config_a10": {
+        "count": 0,
+        "share": 0.0
+      },
+      "config_b": {
+        "count": 0,
+        "share": 0.0
+      },
+      "dncnn": {
+        "count": 150000,
+        "share": 0.75
+      },
+      "identity": {
+        "count": 0,
+        "share": 0.0
+      },
+      "jpeg10": {
+        "count": 0,
+        "share": 0.0
+      },
+      "jpeg20": {
+        "count": 0,
+        "share": 0.0
+      }
+    },
+    "default_accuracy": 53.99850000000001,
+    "detector_accuracy": 100.0,
+    "gain": 1.6119999999999912,
+    "n": 200000,
+    "paired_lcb": 1.5208754265563484,
+    "per_corruption": {
+      "contrast": {
+        "accuracy": 61.666,
+        "action_distribution": {
+          "config_a": {
+            "count": 0,
+            "share": 0.0
+          },
+          "config_a10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "config_b": {
+            "count": 0,
+            "share": 0.0
+          },
+          "dncnn": {
+            "count": 50000,
+            "share": 1.0
+          },
+          "identity": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg20": {
+            "count": 0,
+            "share": 0.0
+          }
+        },
+        "default_accuracy": 61.666,
+        "detector_accuracy": 100.0,
+        "gain": 0.0,
+        "n": 50000,
+        "paired_lcb": 0.0
+      },
+      "elastic_transform": {
+        "accuracy": 48.784,
+        "action_distribution": {
+          "config_a": {
+            "count": 0,
+            "share": 0.0
+          },
+          "config_a10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "config_b": {
+            "count": 0,
+            "share": 0.0
+          },
+          "dncnn": {
+            "count": 50000,
+            "share": 1.0
+          },
+          "identity": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg20": {
+            "count": 0,
+            "share": 0.0
+          }
+        },
+        "default_accuracy": 48.784,
+        "detector_accuracy": 100.0,
+        "gain": 0.0,
+        "n": 50000,
+        "paired_lcb": 0.0
+      },
+      "jpeg_compression": {
+        "accuracy": 61.966,
+        "action_distribution": {
+          "config_a": {
+            "count": 0,
+            "share": 0.0
+          },
+          "config_a10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "config_b": {
+            "count": 0,
+            "share": 0.0
+          },
+          "dncnn": {
+            "count": 50000,
+            "share": 1.0
+          },
+          "identity": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg20": {
+            "count": 0,
+            "share": 0.0
+          }
+        },
+        "default_accuracy": 61.966,
+        "detector_accuracy": 100.0,
+        "gain": 0.0,
+        "n": 50000,
+        "paired_lcb": 0.0
+      },
+      "pixelate": {
+        "accuracy": 50.026,
+        "action_distribution": {
+          "config_a": {
+            "count": 50000,
+            "share": 1.0
+          },
+          "config_a10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "config_b": {
+            "count": 0,
+            "share": 0.0
+          },
+          "dncnn": {
+            "count": 0,
+            "share": 0.0
+          },
+          "identity": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg20": {
+            "count": 0,
+            "share": 0.0
+          }
+        },
+        "default_accuracy": 43.578,
+        "detector_accuracy": 100.0,
+        "gain": 6.448000000000004,
+        "n": 50000,
+        "paired_lcb": 6.086800421953491
+      }
+    }
+  },
+  "elapsed_seconds": 2.599,
+  "end_time_utc": "2026-06-12T04:27:01.456766+00:00",
+  "environment": {
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python": "3.10.20"
+  },
+  "feature_names": [
+    "hfer_input",
+    "m_comm",
+    "band_low",
+    "band_mid",
+    "band_high",
+    "comm_band_low",
+    "comm_band_mid",
+    "comm_band_high",
+    "hfer_jpeg20_residual",
+    "hfer_dncnn_residual",
+    "identity_top1_prob",
+    "identity_margin",
+    "identity_entropy",
+    "dncnn_top1_prob",
+    "dncnn_margin",
+    "dncnn_entropy",
+    "jpeg20_top1_prob",
+    "jpeg20_margin",
+    "jpeg20_entropy"
+  ],
+  "feature_set": "all",
+  "schema_version": 1,
+  "selected": {
+    "corruption_to_action": {
+      "contrast": "dncnn",
+      "elastic_transform": "dncnn",
+      "jpeg_compression": "dncnn",
+      "pixelate": "config_a"
+    }
+  },
+  "start_time_utc": "2026-06-12T04:26:58.857288+00:00",
+  "test": {
+    "accuracy": 55.1875,
+    "action_distribution": {
+      "config_a": {
+        "count": 43612,
+        "share": 0.21806
+      },
+      "config_a10": {
+        "count": 0,
+        "share": 0.0
+      },
+      "config_b": {
+        "count": 0,
+        "share": 0.0
+      },
+      "dncnn": {
+        "count": 156388,
+        "share": 0.78194
+      },
+      "identity": {
+        "count": 0,
+        "share": 0.0
+      },
+      "jpeg10": {
+        "count": 0,
+        "share": 0.0
+      },
+      "jpeg20": {
+        "count": 0,
+        "share": 0.0
+      }
+    },
+    "default_accuracy": 53.99850000000001,
+    "detector_accuracy": 72.4975,
+    "gain": 1.1889999999999956,
+    "n": 200000,
+    "paired_lcb": 1.1009974956649764,
+    "per_corruption": {
+      "contrast": {
+        "accuracy": 60.598,
+        "action_distribution": {
+          "config_a": {
+            "count": 2548,
+            "share": 0.05096
+          },
+          "config_a10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "config_b": {
+            "count": 0,
+            "share": 0.0
+          },
+          "dncnn": {
+            "count": 47452,
+            "share": 0.94904
+          },
+          "identity": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg20": {
+            "count": 0,
+            "share": 0.0
+          }
+        },
+        "default_accuracy": 61.666,
+        "detector_accuracy": 80.52,
+        "gain": -1.0680000000000023,
+        "n": 50000,
+        "paired_lcb": -1.1699433971670383
+      },
+      "elastic_transform": {
+        "accuracy": 48.815999999999995,
+        "action_distribution": {
+          "config_a": {
+            "count": 5633,
+            "share": 0.11266
+          },
+          "config_a10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "config_b": {
+            "count": 0,
+            "share": 0.0
+          },
+          "dncnn": {
+            "count": 44367,
+            "share": 0.88734
+          },
+          "identity": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg20": {
+            "count": 0,
+            "share": 0.0
+          }
+        },
+        "default_accuracy": 48.784,
+        "detector_accuracy": 68.998,
+        "gain": 0.031999999999998696,
+        "n": 50000,
+        "paired_lcb": -0.0821529199881231
+      },
+      "jpeg_compression": {
+        "accuracy": 61.928000000000004,
+        "action_distribution": {
+          "config_a": {
+            "count": 1859,
+            "share": 0.03718
+          },
+          "config_a10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "config_b": {
+            "count": 0,
+            "share": 0.0
+          },
+          "dncnn": {
+            "count": 48141,
+            "share": 0.96282
+          },
+          "identity": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg20": {
+            "count": 0,
+            "share": 0.0
+          }
+        },
+        "default_accuracy": 61.966,
+        "detector_accuracy": 73.328,
+        "gain": -0.037999999999993594,
+        "n": 50000,
+        "paired_lcb": -0.07539330715222171
+      },
+      "pixelate": {
+        "accuracy": 49.408,
+        "action_distribution": {
+          "config_a": {
+            "count": 33572,
+            "share": 0.67144
+          },
+          "config_a10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "config_b": {
+            "count": 0,
+            "share": 0.0
+          },
+          "dncnn": {
+            "count": 16428,
+            "share": 0.32856
+          },
+          "identity": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg20": {
+            "count": 0,
+            "share": 0.0
+          }
+        },
+        "default_accuracy": 43.578,
+        "detector_accuracy": 67.144,
+        "gain": 5.830000000000002,
+        "n": 50000,
+        "paired_lcb": 5.518830471021477
+      }
+    }
+  },
+  "validation": {
+    "accuracy": 55.538,
+    "action_distribution": {
+      "config_a": {
+        "count": 21951,
+        "share": 0.21951
+      },
+      "config_a10": {
+        "count": 0,
+        "share": 0.0
+      },
+      "config_b": {
+        "count": 0,
+        "share": 0.0
+      },
+      "dncnn": {
+        "count": 78049,
+        "share": 0.78049
+      },
+      "identity": {
+        "count": 0,
+        "share": 0.0
+      },
+      "jpeg10": {
+        "count": 0,
+        "share": 0.0
+      },
+      "jpeg20": {
+        "count": 0,
+        "share": 0.0
+      }
+    },
+    "default_accuracy": 54.422000000000004,
+    "detector_accuracy": 72.564,
+    "gain": 1.1159999999999948,
+    "n": 100000,
+    "paired_lcb": 0.9910573240680884,
+    "per_corruption": {
+      "contrast": {
+        "accuracy": 60.760000000000005,
+        "action_distribution": {
+          "config_a": {
+            "count": 1304,
+            "share": 0.05216
+          },
+          "config_a10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "config_b": {
+            "count": 0,
+            "share": 0.0
+          },
+          "dncnn": {
+            "count": 23696,
+            "share": 0.94784
+          },
+          "identity": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg20": {
+            "count": 0,
+            "share": 0.0
+          }
+        },
+        "default_accuracy": 61.96,
+        "detector_accuracy": 80.784,
+        "gain": -1.200000000000001,
+        "n": 25000,
+        "paired_lcb": -1.3463402598701613
+      },
+      "elastic_transform": {
+        "accuracy": 49.519999999999996,
+        "action_distribution": {
+          "config_a": {
+            "count": 2865,
+            "share": 0.1146
+          },
+          "config_a10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "config_b": {
+            "count": 0,
+            "share": 0.0
+          },
+          "dncnn": {
+            "count": 22135,
+            "share": 0.8854
+          },
+          "identity": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg20": {
+            "count": 0,
+            "share": 0.0
+          }
+        },
+        "default_accuracy": 49.5,
+        "detector_accuracy": 69.324,
+        "gain": 0.019999999999997797,
+        "n": 25000,
+        "paired_lcb": -0.14351924680649383
+      },
+      "jpeg_compression": {
+        "accuracy": 62.275999999999996,
+        "action_distribution": {
+          "config_a": {
+            "count": 981,
+            "share": 0.03924
+          },
+          "config_a10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "config_b": {
+            "count": 0,
+            "share": 0.0
+          },
+          "dncnn": {
+            "count": 24019,
+            "share": 0.96076
+          },
+          "identity": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg20": {
+            "count": 0,
+            "share": 0.0
+          }
+        },
+        "default_accuracy": 62.28399999999999,
+        "detector_accuracy": 72.944,
+        "gain": -0.007999999999996898,
+        "n": 25000,
+        "paired_lcb": -0.060005622281576014
+      },
+      "pixelate": {
+        "accuracy": 49.596000000000004,
+        "action_distribution": {
+          "config_a": {
+            "count": 16801,
+            "share": 0.67204
+          },
+          "config_a10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "config_b": {
+            "count": 0,
+            "share": 0.0
+          },
+          "dncnn": {
+            "count": 8199,
+            "share": 0.32796
+          },
+          "identity": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg20": {
+            "count": 0,
+            "share": 0.0
+          }
+        },
+        "default_accuracy": 43.944,
+        "detector_accuracy": 67.204,
+        "gain": 5.652000000000001,
+        "n": 25000,
+        "paired_lcb": 5.210916287160121
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+﻿__pycache__/
+.pytest_cache/
+*.pyc
+*.log
+*.aux
+*.pt
+*.pth
+*.npy
+*.tar
+*.tar.gz
+*.zip
+.env
+configs/local.yaml
+data/raw/
+data/digital/
+model_zoo/
+external/

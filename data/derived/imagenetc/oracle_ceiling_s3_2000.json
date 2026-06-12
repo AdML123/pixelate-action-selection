@@ -1,0 +1,116 @@
+{
+  "parameters": {
+    "batch_size": 32,
+    "corruptions": [
+      "contrast",
+      "elastic_transform",
+      "pixelate",
+      "jpeg_compression"
+    ],
+    "image_size": 224,
+    "limit_images": 2000,
+    "resize_policy": "bicubic only if source is not image_size x image_size",
+    "severity": 3
+  },
+  "schema_version": 1,
+  "summaries": {
+    "contrast": {
+      "best_fixed_accuracy": 69.8,
+      "config_a10_accuracy": 2.9,
+      "config_a_accuracy": 18.8,
+      "config_b_accuracy": 17.5,
+      "dncnn_accuracy": 69.8,
+      "identity_accuracy": 69.05,
+      "jpeg10_accuracy": 3.05,
+      "jpeg20_accuracy": 17.3,
+      "n": 2000,
+      "oracle_minus_best_fixed": 1.8500000000000085,
+      "oracle_winner_counts": {
+        "config_a": 3,
+        "dncnn": 30,
+        "identity": 1381,
+        "jpeg10": 2,
+        "jpeg20": 17,
+        "none": 567
+      },
+      "order_gap_abs": 1.3000000000000007,
+      "order_gap_signed": 1.3000000000000007,
+      "per_image_oracle_accuracy": 71.65
+    },
+    "elastic_transform": {
+      "best_fixed_accuracy": 59.0,
+      "config_a10_accuracy": 46.75,
+      "config_a_accuracy": 53.65,
+      "config_b_accuracy": 52.7,
+      "dncnn_accuracy": 59.0,
+      "identity_accuracy": 58.85,
+      "jpeg10_accuracy": 45.7,
+      "jpeg20_accuracy": 52.85,
+      "n": 2000,
+      "oracle_minus_best_fixed": 10.200000000000003,
+      "oracle_winner_counts": {
+        "config_a": 6,
+        "config_a10": 2,
+        "config_b": 7,
+        "dncnn": 23,
+        "identity": 1177,
+        "jpeg10": 46,
+        "jpeg20": 123,
+        "none": 616
+      },
+      "order_gap_abs": 0.9499999999999957,
+      "order_gap_signed": 0.9499999999999957,
+      "per_image_oracle_accuracy": 69.2
+    },
+    "jpeg_compression": {
+      "best_fixed_accuracy": 64.15,
+      "config_a10_accuracy": 58.75,
+      "config_a_accuracy": 63.45,
+      "config_b_accuracy": 63.3,
+      "dncnn_accuracy": 64.15,
+      "identity_accuracy": 63.5,
+      "jpeg10_accuracy": 58.85,
+      "jpeg20_accuracy": 63.3,
+      "n": 2000,
+      "oracle_minus_best_fixed": 4.699999999999989,
+      "oracle_winner_counts": {
+        "config_a": 4,
+        "config_a10": 5,
+        "config_b": 3,
+        "dncnn": 30,
+        "identity": 1270,
+        "jpeg10": 29,
+        "jpeg20": 36,
+        "none": 623
+      },
+      "order_gap_abs": 0.15000000000000568,
+      "order_gap_signed": 0.15000000000000568,
+      "per_image_oracle_accuracy": 68.85
+    },
+    "pixelate": {
+      "best_fixed_accuracy": 55.7,
+      "config_a10_accuracy": 47.65,
+      "config_a_accuracy": 55.7,
+      "config_b_accuracy": 55.4,
+      "dncnn_accuracy": 49.35,
+      "identity_accuracy": 49.25,
+      "jpeg10_accuracy": 46.7,
+      "jpeg20_accuracy": 55.6,
+      "n": 2000,
+      "oracle_minus_best_fixed": 10.75,
+      "oracle_winner_counts": {
+        "config_a": 18,
+        "config_a10": 5,
+        "config_b": 8,
+        "dncnn": 33,
+        "identity": 985,
+        "jpeg10": 53,
+        "jpeg20": 227,
+        "none": 671
+      },
+      "order_gap_abs": 0.30000000000000426,
+      "order_gap_signed": 0.30000000000000426,
+      "per_image_oracle_accuracy": 66.45
+    }
+  }
+}
