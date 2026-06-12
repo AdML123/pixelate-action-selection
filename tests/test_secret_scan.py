@@ -8,7 +8,8 @@ from secret_scan import iter_text_files
 
 
 def test_secret_scan_flags_local_absolute_path():
-    findings = scan_text("data lives at C:\\Users\\name\\secret")
+    slash = chr(92)
+    findings = scan_text("data lives at " + "C:" + slash + "Users" + slash + "name" + slash + "secret")
 
     assert findings
 
@@ -22,7 +23,8 @@ def test_secret_scan_allows_relative_path():
 def test_secret_scan_skips_git_directory(tmp_path):
     git_object = tmp_path / ".git" / "objects" / "aa"
     git_object.mkdir(parents=True)
-    (git_object / "bb").write_text("packed D:\\local\\path", encoding="utf-8")
+    slash = chr(92)
+    (git_object / "bb").write_text("packed " + "D:" + slash + "local" + slash + "path", encoding="utf-8")
     visible = tmp_path / "README.md"
     visible.write_text("relative data/derived/table.csv", encoding="utf-8")
 

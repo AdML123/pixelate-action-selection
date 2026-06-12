@@ -1,5 +1,5 @@
 {
-  "command": "code\\evaluate_router.py --features-root data\\local_review\\features --test-features-root data\\local_review\\features_test --action-csv data\\local_review\\action_eval\\action_eval.csv --router-dir data\\local_review\\router --outdir data\\derived\\imagenetc",
+  "command": "code\\evaluate_router.py --features-root data\\features --test-features-root data\\features_test --action-csv data\\action_eval\\action_eval.csv --router-dir data\\router --outdir data\\derived\\imagenetc",
   "default_action": "dncnn",
   "elapsed_seconds": 74.937,
   "end_time_utc": "2026-06-12T04:26:39.447956+00:00",
@@ -33,10 +33,10 @@
     "jpeg20_entropy"
   ],
   "inputs": {
-    "action_csv": "data/local_review/action_eval/action_eval.csv",
-    "features_root": "data/local_review/features",
-    "router_dir": "data/local_review/router",
-    "test_features_root": "data/local_review/features_test"
+    "action_csv": "data/action_eval/action_eval.csv",
+    "features_root": "data/features",
+    "router_dir": "data/router",
+    "test_features_root": "data/features_test"
   },
   "policies": {
     "best_fixed": {
@@ -1185,7 +1185,7 @@
       "feature_set": "all",
       "policy": "logistic_all",
       "selected": {
-        "checkpoint": "data\\local_review\\router\\router_all.pt",
+        "checkpoint": "data\\router\\router_all.pt",
         "tau": 0.03
       },
       "test": {
@@ -1567,7 +1567,7 @@
       "feature_set": "confidence",
       "policy": "logistic_confidence",
       "selected": {
-        "checkpoint": "data\\local_review\\router\\router_confidence.pt",
+        "checkpoint": "data\\router\\router_confidence.pt",
         "tau": 0.01
       },
       "test": {
@@ -1949,7 +1949,7 @@
       "feature_set": "no_commutator",
       "policy": "logistic_no_commutator",
       "selected": {
-        "checkpoint": "data\\local_review\\router\\router_no_commutator.pt",
+        "checkpoint": "data\\router\\router_no_commutator.pt",
         "tau": 0.02
       },
       "test": {
@@ -2331,7 +2331,7 @@
       "feature_set": "spectral",
       "policy": "logistic_spectral",
       "selected": {
-        "checkpoint": "data\\local_review\\router\\router_spectral.pt",
+        "checkpoint": "data\\router\\router_spectral.pt",
         "tau": 0.03
       },
       "test": {

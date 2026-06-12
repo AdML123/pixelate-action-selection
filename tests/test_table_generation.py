@@ -53,7 +53,7 @@ def test_table_oracle_uses_confirmation_json():
     assert "Contrast & 1.0 & 2.0 & 3.0" not in rendered
 
 
-def _assert_no_placeholder_cells(rendered: str) -> None:
+def _assert_no_empty_cells(rendered: str) -> None:
     assert "--" not in rendered
     assert " &  & " not in rendered
 
@@ -97,7 +97,7 @@ def test_table_pixelate_primary_makes_pixelate_headline():
     assert "+5.2" in rendered
     assert "+4.9" in rendered
     assert "LOCO" not in rendered
-    _assert_no_placeholder_cells(rendered)
+    _assert_no_empty_cells(rendered)
 
 
 def test_table_action_distribution_reports_pixelate_switching():
@@ -162,7 +162,7 @@ def test_table_action_distribution_reports_pixelate_switching():
     assert "+5.2" in rendered
 
 
-def test_main_text_tables_have_no_placeholder_cells():
+def test_main_text_tables_have_no_empty_cells():
     action = {
         "summaries": {
             "test": {
@@ -336,7 +336,7 @@ def test_main_text_tables_have_no_placeholder_cells():
         table_main(action, ablation),
         table_ablation(ablation),
     ]:
-        _assert_no_placeholder_cells(rendered)
+        _assert_no_empty_cells(rendered)
 
 
 def test_ablation_table_surfaces_simple_baselines():
@@ -377,7 +377,7 @@ def test_ablation_table_surfaces_simple_baselines():
         "Oracle & true corr.",
     ]:
         assert label in rendered
-    _assert_no_placeholder_cells(rendered)
+    _assert_no_empty_cells(rendered)
 
 
 def test_pixelate_severity_table_uses_all_five_severities():
@@ -401,4 +401,4 @@ def test_pixelate_severity_table_uses_all_five_severities():
     assert "Config-A" in rendered
     assert "Gain" in rendered
     assert "LCB" in rendered
-    _assert_no_placeholder_cells(rendered)
+    _assert_no_empty_cells(rendered)

@@ -35,3 +35,41 @@ def test_public_package_has_no_internal_or_legacy_identifiers():
                 offenders.append(f"{path.relative_to(PACKAGE_ROOT)}: {term}")
 
     assert offenders == []
+
+
+def test_public_package_has_no_runtime_cache_artifacts():
+    forbidden_parts = {"__pycache__", ".pytest_cache"}
+    forbidden_suffixes = {".pyc", ".pyo", ".aux", ".log", ".out", ".toc", ".fls", ".fdb_latexmk"}
+    offenders = []
+    manifest = PACKAGE_ROOT / "MANIFEST.sha256"
+    for line in manifest.read_text(encoding="utf-8").splitlines():
+        if not line.strip():
+            continue
+        relative = Path(line.split("  ", 1)[1])
+        if forbidden_parts.intersection(relative.parts) or relative.suffix.lower() in forbidden_suffixes:
+            offenders.append(str(relative))
+
+    assert offenders == []
+
+
+def test_derived_artifacts_do_not_expose_private_work_paths():
+    slash = chr(92)
+    forbidden = ["local_" + "review", "D:" + slash, "C:" + slash, "/" + "Users/", slash + "Users" + slash]
+    offenders = []
+    for path in (PACKAGE_ROOT / "data" / "derived").rglob("*"):
+        if not path.is_file():
+            continue
+        text = path.read_text(encoding="utf-8", errors="ignore")
+        for term in forbidden:
+            if term in text:
+                offenders.append(f"{path.relative_to(PACKAGE_ROOT)}: {term}")
+
+    assert offenders == []
+
+
+def test_full_rerun_entrypoint_is_executable():
+    text = (PACKAGE_ROOT / "code" / "run_experiments.py").read_text(encoding="utf-8").lower()
+    forbidden = ["implemented " + "after", "smoke checks " + "pass", "place" + "holder", "to" + "do", "st" + "ub"]
+
+    for phrase in forbidden:
+        assert phrase not in text

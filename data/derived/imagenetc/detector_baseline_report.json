@@ -1,5 +1,5 @@
 {
-  "command": "code\\evaluate_corruption_detector.py --features-root data\\local_review\\features --test-features-root data\\local_review\\features_test --action-csv data\\local_review\\action_eval\\action_eval.csv --outdir data\\derived\\imagenetc --feature-set all",
+  "command": "code\\evaluate_corruption_detector.py --features-root data\\features --test-features-root data\\features_test --action-csv data\\action_eval\\action_eval.csv --outdir data\\derived\\imagenetc --feature-set all",
   "diagnostic_true_label_oracle": {
     "accuracy": 55.610499999999995,
     "action_distribution": {

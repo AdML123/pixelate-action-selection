@@ -77,18 +77,13 @@ your local resources:
 Then run the pipeline:
 
 ```powershell
-python code/oracle_ceiling.py --config configs/local.yaml --severity 3 --images 2000
-python code/full_action_eval.py --config configs/local.yaml
-python code/extract_imagenetc_features.py --config configs/local.yaml
-python code/train_router.py --config configs/local.yaml
-python code/evaluate_router.py --config configs/local.yaml
-python code/evaluate_corruption_detector.py --features-root data/features --test-features-root data/features_test --action-csv data/action_eval/action_eval.csv --outdir data/derived/imagenetc
-python code/make_pixelate_severity_table.py --action-csv data/action_eval/action_eval.csv --features-root-test data/features_test --router-checkpoint data/router/router_all.pt --outdir data/source
-python code/run_loco.py --config configs/local.yaml
-python code/measure_latency.py --config configs/local.yaml
-python code/make_tables.py --outdir tables/imagenetc
-python code/make_figures.py --outdir figures/imagenetc --case-digital-root /path/to/ImageNet-C/digital --case-severity 3 --case-index 7000
-python code/verify_results.py --results data/derived/imagenetc --tables tables/imagenetc --figures figures/imagenetc
+python code/run_experiments.py --config configs/local.yaml
+```
+
+To inspect the exact subcommands before a full run:
+
+```powershell
+python code/run_experiments.py --config configs/local.yaml --dry-run
 ```
 
 The public package keeps compact derived summaries and figure source data.

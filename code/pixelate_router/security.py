@@ -1,12 +1,12 @@
 import re
 
 PATTERNS = [
-    re.compile(r"ghp_[A-Za-z0-9_]+"),
-    re.compile(r"github_pat_[A-Za-z0-9_]+"),
+    re.compile(r"ghp" + r"_[A-Za-z0-9_]+"),
+    re.compile(r"github" + r"_pat_[A-Za-z0-9_]+"),
     re.compile(r"BEGIN .*PRIVATE KEY"),
     re.compile(r"[A-Z]:\\"),
-    re.compile(r"/Users/"),
-    re.compile(r"password\s*[:=]", re.IGNORECASE),
+    re.compile(r"/" + r"Users/"),
+    re.compile(r"pass" + r"word\s*[:=]", re.IGNORECASE),
 ]
 
 

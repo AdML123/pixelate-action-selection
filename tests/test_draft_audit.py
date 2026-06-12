@@ -62,7 +62,7 @@ def test_manuscript_avoids_broad_router_framing():
         assert phrase not in text
 
 
-def test_manuscript_uses_compact_no_placeholder_tables():
+def test_manuscript_uses_compact_filled_tables():
     text = LATEX_MAIN.read_text(encoding="utf-8")
     inputs = [line for line in text.splitlines() if r"\input{tables/imagenetc/table_" in line]
 
