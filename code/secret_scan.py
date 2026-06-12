@@ -13,7 +13,7 @@ def iter_text_files(root: Path):
             continue
         if path.name == "security.py":
             continue
-        if path.suffix.lower() in {".png", ".pdf", ".pt", ".pth", ".tar", ".gz", ".zip"}:
+        if path.suffix.lower() in {".png", ".pdf", ".pt", ".pth", ".tar", ".gz", ".zip", ".npy", ".npz"}:
             continue
         yield path
 

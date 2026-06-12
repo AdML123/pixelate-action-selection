@@ -1,0 +1,1796 @@
+{
+  "action_distribution": {
+    "config_a": {
+      "count": 5152,
+      "share": 0.05152
+    },
+    "config_a10": {
+      "count": 140,
+      "share": 0.0014
+    },
+    "config_b": {
+      "count": 3072,
+      "share": 0.03072
+    },
+    "dncnn": {
+      "count": 81179,
+      "share": 0.81179
+    },
+    "identity": {
+      "count": 3221,
+      "share": 0.03221
+    },
+    "jpeg10": {
+      "count": 5,
+      "share": 5e-05
+    },
+    "jpeg20": {
+      "count": 7231,
+      "share": 0.07231
+    }
+  },
+  "best_validation_loss": 0.4622117877006531,
+  "contrast_gain": -1.1280000000000068,
+  "default_action": "dncnn",
+  "epochs_ran": 50,
+  "feature_mean": [
+    0.2771397829055786,
+    0.21837930381298065,
+    0.7049345970153809,
+    0.2799975574016571,
+    0.2211766541004181,
+    0.7029857635498047,
+    0.2382110357284546,
+    0.18092389404773712,
+    0.7302976250648499
+  ],
+  "feature_names": [
+    "identity_top1_prob",
+    "identity_margin",
+    "identity_entropy",
+    "dncnn_top1_prob",
+    "dncnn_margin",
+    "dncnn_entropy",
+    "jpeg20_top1_prob",
+    "jpeg20_margin",
+    "jpeg20_entropy"
+  ],
+  "feature_set": "confidence",
+  "feature_std": [
+    0.1917736828327179,
+    0.20641785860061646,
+    0.14843212068080902,
+    0.1916629672050476,
+    0.20678521692752838,
+    0.14818015694618225,
+    0.19085273146629333,
+    0.19875656068325043,
+    0.15011776983737946
+  ],
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.6296370602717065,
+      "validation_loss": 0.5677501559257507
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.5437211299398143,
+      "validation_loss": 0.525530219078064
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.5169777547477916,
+      "validation_loss": 0.5079755187034607
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.5047221185675093,
+      "validation_loss": 0.497881680727005
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.49665189928309933,
+      "validation_loss": 0.4913572371006012
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.49171731938981705,
+      "validation_loss": 0.4869461953639984
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.4880041675582813,
+      "validation_loss": 0.48384687304496765
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.4853564777951332,
+      "validation_loss": 0.4816150367259979
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.48357273704686743,
+      "validation_loss": 0.4799523949623108
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.48225229029442856,
+      "validation_loss": 0.4786743223667145
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.48102260300308275,
+      "validation_loss": 0.4776218831539154
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.480085591601718,
+      "validation_loss": 0.4768332839012146
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.4797113011976716,
+      "validation_loss": 0.47601696848869324
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.4794817893368423,
+      "validation_loss": 0.4753511846065521
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.47803105727122847,
+      "validation_loss": 0.4747653603553772
+    },
+    {
+      "epoch": 16,
+      "train_loss": 0.47778240282824086,
+      "validation_loss": 0.4742356240749359
+    },
+    {
+      "epoch": 17,
+      "train_loss": 0.4777621325034245,
+      "validation_loss": 0.4736510217189789
+    },
+    {
+      "epoch": 18,
+      "train_loss": 0.4772978931855244,
+      "validation_loss": 0.4732225835323334
+    },
+    {
+      "epoch": 19,
+      "train_loss": 0.4764531907761932,
+      "validation_loss": 0.47265124320983887
+    },
+    {
+      "epoch": 20,
+      "train_loss": 0.47589673946617517,
+      "validation_loss": 0.47220784425735474
+    },
+    {
+      "epoch": 21,
+      "train_loss": 0.4752184927083884,
+      "validation_loss": 0.4717003107070923
+    },
+    {
+      "epoch": 22,
+      "train_loss": 0.47504081771631906,
+      "validation_loss": 0.4713187515735626
+    },
+    {
+      "epoch": 23,
+      "train_loss": 0.4748627752255482,
+      "validation_loss": 0.4707982540130615
+    },
+    {
+      "epoch": 24,
+      "train_loss": 0.4744437545727772,
+      "validation_loss": 0.4703740179538727
+    },
+    {
+      "epoch": 25,
+      "train_loss": 0.47415728364021154,
+      "validation_loss": 0.4699278175830841
+    },
+    {
+      "epoch": 26,
+      "train_loss": 0.4735129606571926,
+      "validation_loss": 0.4696758985519409
+    },
+    {
+      "epoch": 27,
+      "train_loss": 0.4735800401799998,
+      "validation_loss": 0.4691385328769684
+    },
+    {
+      "epoch": 28,
+      "train_loss": 0.47291573597367403,
+      "validation_loss": 0.4687316417694092
+    },
+    {
+      "epoch": 29,
+      "train_loss": 0.4725615059494213,
+      "validation_loss": 0.46829935908317566
+    },
+    {
+      "epoch": 30,
+      "train_loss": 0.47212616786076006,
+      "validation_loss": 0.46801525354385376
+    },
+    {
+      "epoch": 31,
+      "train_loss": 0.4712682618836688,
+      "validation_loss": 0.46753597259521484
+    },
+    {
+      "epoch": 32,
+      "train_loss": 0.47159051382617584,
+      "validation_loss": 0.4671752154827118
+    },
+    {
+      "epoch": 33,
+      "train_loss": 0.4707786678128941,
+      "validation_loss": 0.4668525457382202
+    },
+    {
+      "epoch": 34,
+      "train_loss": 0.4699698297461127,
+      "validation_loss": 0.466498464345932
+    },
+    {
+      "epoch": 35,
+      "train_loss": 0.4706038563114822,
+      "validation_loss": 0.46618106961250305
+    },
+    {
+      "epoch": 36,
+      "train_loss": 0.46941880796365676,
+      "validation_loss": 0.4658389687538147
+    },
+    {
+      "epoch": 37,
+      "train_loss": 0.4695868169426159,
+      "validation_loss": 0.46550223231315613
+    },
+    {
+      "epoch": 38,
+      "train_loss": 0.46900268364104497,
+      "validation_loss": 0.46520763635635376
+    },
+    {
+      "epoch": 39,
+      "train_loss": 0.4690724463219855,
+      "validation_loss": 0.46495455503463745
+    },
+    {
+      "epoch": 40,
+      "train_loss": 0.4687412419136922,
+      "validation_loss": 0.4646311402320862
+    },
+    {
+      "epoch": 41,
+      "train_loss": 0.4684701269599283,
+      "validation_loss": 0.4643940031528473
+    },
+    {
+      "epoch": 42,
+      "train_loss": 0.468071970970008,
+      "validation_loss": 0.4641231298446655
+    },
+    {
+      "epoch": 43,
+      "train_loss": 0.4681501899175583,
+      "validation_loss": 0.46385735273361206
+    },
+    {
+      "epoch": 44,
+      "train_loss": 0.4677969498239505,
+      "validation_loss": 0.463645339012146
+    },
+    {
+      "epoch": 45,
+      "train_loss": 0.4676026597524145,
+      "validation_loss": 0.46331214904785156
+    },
+    {
+      "epoch": 46,
+      "train_loss": 0.4676976930943264,
+      "validation_loss": 0.4630751609802246
+    },
+    {
+      "epoch": 47,
+      "train_loss": 0.4672427498231268,
+      "validation_loss": 0.46285000443458557
+    },
+    {
+      "epoch": 48,
+      "train_loss": 0.46692466489069023,
+      "validation_loss": 0.4626704454421997
+    },
+    {
+      "epoch": 49,
+      "train_loss": 0.4666823184793922,
+      "validation_loss": 0.4624179005622864
+    },
+    {
+      "epoch": 50,
+      "train_loss": 0.4666295676094711,
+      "validation_loss": 0.4622117877006531
+    }
+  ],
+  "paired_lcb": 0.8601497754122771,
+  "per_corruption": {
+    "contrast": {
+      "action_distribution": {
+        "config_a": {
+          "count": 418,
+          "share": 0.01672
+        },
+        "config_a10": {
+          "count": 29,
+          "share": 0.00116
+        },
+        "config_b": {
+          "count": 240,
+          "share": 0.0096
+        },
+        "dncnn": {
+          "count": 22788,
+          "share": 0.91152
+        },
+        "identity": {
+          "count": 445,
+          "share": 0.0178
+        },
+        "jpeg10": {
+          "count": 0,
+          "share": 0.0
+        },
+        "jpeg20": {
+          "count": 1080,
+          "share": 0.0432
+        }
+      },
+      "default_accuracy": 61.96,
+      "gain": -1.1280000000000068,
+      "n": 25000,
+      "paired_lcb": -1.2727393683985617,
+      "router_accuracy": 60.831999999999994
+    },
+    "elastic_transform": {
+      "action_distribution": {
+        "config_a": {
+          "count": 1679,
+          "share": 0.06716
+        },
+        "config_a10": {
+          "count": 23,
+          "share": 0.00092
+        },
+        "config_b": {
+          "count": 1054,
+          "share": 0.04216
+        },
+        "dncnn": {
+          "count": 18966,
+          "share": 0.75864
+        },
+        "identity": {
+          "count": 910,
+          "share": 0.0364
+        },
+        "jpeg10": {
+          "count": 3,
+          "share": 0.00012
+        },
+        "jpeg20": {
+          "count": 2365,
+          "share": 0.0946
+        }
+      },
+      "default_accuracy": 49.5,
+      "gain": 0.5839999999999956,
+      "n": 25000,
+      "paired_lcb": 0.3587885296458656,
+      "router_accuracy": 50.083999999999996
+    },
+    "jpeg_compression": {
+      "action_distribution": {
+        "config_a": {
+          "count": 458,
+          "share": 0.01832
+        },
+        "config_a10": {
+          "count": 0,
+          "share": 0.0
+        },
+        "config_b": {
+          "count": 568,
+          "share": 0.02272
+        },
+        "dncnn": {
+          "count": 22262,
+          "share": 0.89048
+        },
+        "identity": {
+          "count": 1213,
+          "share": 0.04852
+        },
+        "jpeg10": {
+          "count": 0,
+          "share": 0.0
+        },
+        "jpeg20": {
+          "count": 499,
+          "share": 0.01996
+        }
+      },
+      "default_accuracy": 62.28399999999999,
+      "gain": -0.12799999999999478,
+      "n": 25000,
+      "paired_lcb": -0.20318340023416626,
+      "router_accuracy": 62.156
+    },
+    "pixelate": {
+      "action_distribution": {
+        "config_a": {
+          "count": 2597,
+          "share": 0.10388
+        },
+        "config_a10": {
+          "count": 88,
+          "share": 0.00352
+        },
+        "config_b": {
+          "count": 1210,
+          "share": 0.0484
+        },
+        "dncnn": {
+          "count": 17163,
+          "share": 0.68652
+        },
+        "identity": {
+          "count": 653,
+          "share": 0.02612
+        },
+        "jpeg10": {
+          "count": 2,
+          "share": 8e-05
+        },
+        "jpeg20": {
+          "count": 3287,
+          "share": 0.13148
+        }
+      },
+      "default_accuracy": 43.944,
+      "gain": 4.532000000000003,
+      "n": 25000,
+      "paired_lcb": 4.222571701922837,
+      "router_accuracy": 48.476
+    }
+  },
+  "tau": 0.01,
+  "tau_selected": 0.01,
+  "tau_sweep": {
+    "0.00": {
+      "action_distribution": {
+        "config_a": {
+          "count": 6145,
+          "share": 0.06145
+        },
+        "config_a10": {
+          "count": 146,
+          "share": 0.00146
+        },
+        "config_b": {
+          "count": 3562,
+          "share": 0.03562
+        },
+        "dncnn": {
+          "count": 52325,
+          "share": 0.52325
+        },
+        "identity": {
+          "count": 28479,
+          "share": 0.28479
+        },
+        "jpeg10": {
+          "count": 5,
+          "share": 5e-05
+        },
+        "jpeg20": {
+          "count": 9338,
+          "share": 0.09338
+        }
+      },
+      "contrast_gain": -1.216000000000006,
+      "paired_lcb": 0.8421611787526638,
+      "per_corruption": {
+        "contrast": {
+          "action_distribution": {
+            "config_a": {
+              "count": 499,
+              "share": 0.01996
+            },
+            "config_a10": {
+              "count": 32,
+              "share": 0.00128
+            },
+            "config_b": {
+              "count": 267,
+              "share": 0.01068
+            },
+            "dncnn": {
+              "count": 15072,
+              "share": 0.60288
+            },
+            "identity": {
+              "count": 7886,
+              "share": 0.31544
+            },
+            "jpeg10": {
+              "count": 0,
+              "share": 0.0
+            },
+            "jpeg20": {
+              "count": 1244,
+              "share": 0.04976
+            }
+          },
+          "default_accuracy": 61.96,
+          "gain": -1.216000000000006,
+          "n": 25000,
+          "paired_lcb": -1.368893784258179,
+          "router_accuracy": 60.744
+        },
+        "elastic_transform": {
+          "action_distribution": {
+            "config_a": {
+              "count": 1916,
+              "share": 0.07664
+            },
+            "config_a10": {
+              "count": 24,
+              "share": 0.00096
+            },
+            "config_b": {
+              "count": 1172,
+              "share": 0.04688
+            },
+            "dncnn": {
+              "count": 12017,
+              "share": 0.48068
+            },
+            "identity": {
+              "count": 7133,
+              "share": 0.28532
+            },
+            "jpeg10": {
+              "count": 3,
+              "share": 0.00012
+            },
+            "jpeg20": {
+              "count": 2735,
+              "share": 0.1094
+            }
+          },
+          "default_accuracy": 49.5,
+          "gain": 0.5199999999999982,
+          "n": 25000,
+          "paired_lcb": 0.2843613514779312,
+          "router_accuracy": 50.019999999999996
+        },
+        "jpeg_compression": {
+          "action_distribution": {
+            "config_a": {
+              "count": 715,
+              "share": 0.0286
+            },
+            "config_a10": {
+              "count": 0,
+              "share": 0.0
+            },
+            "config_b": {
+              "count": 793,
+              "share": 0.03172
+            },
+            "dncnn": {
+              "count": 13133,
+              "share": 0.52532
+            },
+            "identity": {
+              "count": 8700,
+              "share": 0.348
+            },
+            "jpeg10": {
+              "count": 0,
+              "share": 0.0
+            },
+            "jpeg20": {
+              "count": 1659,
+              "share": 0.06636
+            }
+          },
+          "default_accuracy": 62.28399999999999,
+          "gain": -0.23999999999999577,
+          "n": 25000,
+          "paired_lcb": -0.3480281433552862,
+          "router_accuracy": 62.044
+        },
+        "pixelate": {
+          "action_distribution": {
+            "config_a": {
+              "count": 3015,
+              "share": 0.1206
+            },
+            "config_a10": {
+              "count": 90,
+              "share": 0.0036
+            },
+            "config_b": {
+              "count": 1330,
+              "share": 0.0532
+            },
+            "dncnn": {
+              "count": 12103,
+              "share": 0.48412
+            },
+            "identity": {
+              "count": 4760,
+              "share": 0.1904
+            },
+            "jpeg10": {
+              "count": 2,
+              "share": 8e-05
+            },
+            "jpeg20": {
+              "count": 3700,
+              "share": 0.148
+            }
+          },
+          "default_accuracy": 43.944,
+          "gain": 4.748000000000002,
+          "n": 25000,
+          "paired_lcb": 4.427353761971635,
+          "router_accuracy": 48.692
+        }
+      },
+      "tau": 0.0,
+      "validation_accuracy_default": 54.422000000000004,
+      "validation_accuracy_router": 55.375,
+      "validation_gain": 0.9529999999999927
+    },
+    "0.01": {
+      "action_distribution": {
+        "config_a": {
+          "count": 5152,
+          "share": 0.05152
+        },
+        "config_a10": {
+          "count": 140,
+          "share": 0.0014
+        },
+        "config_b": {
+          "count": 3072,
+          "share": 0.03072
+        },
+        "dncnn": {
+          "count": 81179,
+          "share": 0.81179
+        },
+        "identity": {
+          "count": 3221,
+          "share": 0.03221
+        },
+        "jpeg10": {
+          "count": 5,
+          "share": 5e-05
+        },
+        "jpeg20": {
+          "count": 7231,
+          "share": 0.07231
+        }
+      },
+      "contrast_gain": -1.1280000000000068,
+      "paired_lcb": 0.8601497754122771,
+      "per_corruption": {
+        "contrast": {
+          "action_distribution": {
+            "config_a": {
+              "count": 418,
+              "share": 0.01672
+            },
+            "config_a10": {
+              "count": 29,
+              "share": 0.00116
+            },
+            "config_b": {
+              "count": 240,
+              "share": 0.0096
+            },
+            "dncnn": {
+              "count": 22788,
+              "share": 0.91152
+            },
+            "identity": {
+              "count": 445,
+              "share": 0.0178
+            },
+            "jpeg10": {
+              "count": 0,
+              "share": 0.0
+            },
+            "jpeg20": {
+              "count": 1080,
+              "share": 0.0432
+            }
+          },
+          "default_accuracy": 61.96,
+          "gain": -1.1280000000000068,
+          "n": 25000,
+          "paired_lcb": -1.2727393683985617,
+          "router_accuracy": 60.831999999999994
+        },
+        "elastic_transform": {
+          "action_distribution": {
+            "config_a": {
+              "count": 1679,
+              "share": 0.06716
+            },
+            "config_a10": {
+              "count": 23,
+              "share": 0.00092
+            },
+            "config_b": {
+              "count": 1054,
+              "share": 0.04216
+            },
+            "dncnn": {
+              "count": 18966,
+              "share": 0.75864
+            },
+            "identity": {
+              "count": 910,
+              "share": 0.0364
+            },
+            "jpeg10": {
+              "count": 3,
+              "share": 0.00012
+            },
+            "jpeg20": {
+              "count": 2365,
+              "share": 0.0946
+            }
+          },
+          "default_accuracy": 49.5,
+          "gain": 0.5839999999999956,
+          "n": 25000,
+          "paired_lcb": 0.3587885296458656,
+          "router_accuracy": 50.083999999999996
+        },
+        "jpeg_compression": {
+          "action_distribution": {
+            "config_a": {
+              "count": 458,
+              "share": 0.01832
+            },
+            "config_a10": {
+              "count": 0,
+              "share": 0.0
+            },
+            "config_b": {
+              "count": 568,
+              "share": 0.02272
+            },
+            "dncnn": {
+              "count": 22262,
+              "share": 0.89048
+            },
+            "identity": {
+              "count": 1213,
+              "share": 0.04852
+            },
+            "jpeg10": {
+              "count": 0,
+              "share": 0.0
+            },
+            "jpeg20": {
+              "count": 499,
+              "share": 0.01996
+            }
+          },
+          "default_accuracy": 62.28399999999999,
+          "gain": -0.12799999999999478,
+          "n": 25000,
+          "paired_lcb": -0.20318340023416626,
+          "router_accuracy": 62.156
+        },
+        "pixelate": {
+          "action_distribution": {
+            "config_a": {
+              "count": 2597,
+              "share": 0.10388
+            },
+            "config_a10": {
+              "count": 88,
+              "share": 0.00352
+            },
+            "config_b": {
+              "count": 1210,
+              "share": 0.0484
+            },
+            "dncnn": {
+              "count": 17163,
+              "share": 0.68652
+            },
+            "identity": {
+              "count": 653,
+              "share": 0.02612
+            },
+            "jpeg10": {
+              "count": 2,
+              "share": 8e-05
+            },
+            "jpeg20": {
+              "count": 3287,
+              "share": 0.13148
+            }
+          },
+          "default_accuracy": 43.944,
+          "gain": 4.532000000000003,
+          "n": 25000,
+          "paired_lcb": 4.222571701922837,
+          "router_accuracy": 48.476
+        }
+      },
+      "tau": 0.01,
+      "validation_accuracy_default": 54.422000000000004,
+      "validation_accuracy_router": 55.387,
+      "validation_gain": 0.9649999999999936
+    },
+    "0.02": {
+      "action_distribution": {
+        "config_a": {
+          "count": 4410,
+          "share": 0.0441
+        },
+        "config_a10": {
+          "count": 137,
+          "share": 0.00137
+        },
+        "config_b": {
+          "count": 2584,
+          "share": 0.02584
+        },
+        "dncnn": {
+          "count": 86351,
+          "share": 0.86351
+        },
+        "identity": {
+          "count": 349,
+          "share": 0.00349
+        },
+        "jpeg10": {
+          "count": 5,
+          "share": 5e-05
+        },
+        "jpeg20": {
+          "count": 6164,
+          "share": 0.06164
+        }
+      },
+      "contrast_gain": -1.0120000000000018,
+      "paired_lcb": 0.8570233312309368,
+      "per_corruption": {
+        "contrast": {
+          "action_distribution": {
+            "config_a": {
+              "count": 350,
+              "share": 0.014
+            },
+            "config_a10": {
+              "count": 27,
+              "share": 0.00108
+            },
+            "config_b": {
+              "count": 208,
+              "share": 0.00832
+            },
+            "dncnn": {
+              "count": 23463,
+              "share": 0.93852
+            },
+            "identity": {
+              "count": 41,
+              "share": 0.00164
+            },
+            "jpeg10": {
+              "count": 0,
+              "share": 0.0
+            },
+            "jpeg20": {
+              "count": 911,
+              "share": 0.03644
+            }
+          },
+          "default_accuracy": 61.96,
+          "gain": -1.0120000000000018,
+          "n": 25000,
+          "paired_lcb": -1.1492452177176875,
+          "router_accuracy": 60.948
+        },
+        "elastic_transform": {
+          "action_distribution": {
+            "config_a": {
+              "count": 1447,
+              "share": 0.05788
+            },
+            "config_a10": {
+              "count": 22,
+              "share": 0.00088
+            },
+            "config_b": {
+              "count": 921,
+              "share": 0.03684
+            },
+            "dncnn": {
+              "count": 20458,
+              "share": 0.81832
+            },
+            "identity": {
+              "count": 113,
+              "share": 0.00452
+            },
+            "jpeg10": {
+              "count": 3,
+              "share": 0.00012
+            },
+            "jpeg20": {
+              "count": 2036,
+              "share": 0.08144
+            }
+          },
+          "default_accuracy": 49.5,
+          "gain": 0.5759999999999987,
+          "n": 25000,
+          "paired_lcb": 0.3605496151605454,
+          "router_accuracy": 50.076
+        },
+        "jpeg_compression": {
+          "action_distribution": {
+            "config_a": {
+              "count": 334,
+              "share": 0.01336
+            },
+            "config_a10": {
+              "count": 0,
+              "share": 0.0
+            },
+            "config_b": {
+              "count": 379,
+              "share": 0.01516
+            },
+            "dncnn": {
+              "count": 23917,
+              "share": 0.95668
+            },
+            "identity": {
+              "count": 102,
+              "share": 0.00408
+            },
+            "jpeg10": {
+              "count": 0,
+              "share": 0.0
+            },
+            "jpeg20": {
+              "count": 268,
+              "share": 0.01072
+            }
+          },
+          "default_accuracy": 62.28399999999999,
+          "gain": -0.039999999999995595,
+          "n": 25000,
+          "paired_lcb": -0.0870383273700253,
+          "router_accuracy": 62.244
+        },
+        "pixelate": {
+          "action_distribution": {
+            "config_a": {
+              "count": 2279,
+              "share": 0.09116
+            },
+            "config_a10": {
+              "count": 88,
+              "share": 0.00352
+            },
+            "config_b": {
+              "count": 1076,
+              "share": 0.04304
+            },
+            "dncnn": {
+              "count": 18513,
+              "share": 0.74052
+            },
+            "identity": {
+              "count": 93,
+              "share": 0.00372
+            },
+            "jpeg10": {
+              "count": 2,
+              "share": 8e-05
+            },
+            "jpeg20": {
+              "count": 2949,
+              "share": 0.11796
+            }
+          },
+          "default_accuracy": 43.944,
+          "gain": 4.304000000000002,
+          "n": 25000,
+          "paired_lcb": 4.004049805893489,
+          "router_accuracy": 48.248000000000005
+        }
+      },
+      "tau": 0.02,
+      "validation_accuracy_default": 54.422000000000004,
+      "validation_accuracy_router": 55.379,
+      "validation_gain": 0.9569999999999967
+    },
+    "0.03": {
+      "action_distribution": {
+        "config_a": {
+          "count": 3765,
+          "share": 0.03765
+        },
+        "config_a10": {
+          "count": 131,
+          "share": 0.00131
+        },
+        "config_b": {
+          "count": 2259,
+          "share": 0.02259
+        },
+        "dncnn": {
+          "count": 88396,
+          "share": 0.88396
+        },
+        "identity": {
+          "count": 3,
+          "share": 3e-05
+        },
+        "jpeg10": {
+          "count": 5,
+          "share": 5e-05
+        },
+        "jpeg20": {
+          "count": 5441,
+          "share": 0.05441
+        }
+      },
+      "contrast_gain": -0.9160000000000057,
+      "paired_lcb": 0.8486984782496616,
+      "per_corruption": {
+        "contrast": {
+          "action_distribution": {
+            "config_a": {
+              "count": 288,
+              "share": 0.01152
+            },
+            "config_a10": {
+              "count": 23,
+              "share": 0.00092
+            },
+            "config_b": {
+              "count": 187,
+              "share": 0.00748
+            },
+            "dncnn": {
+              "count": 23727,
+              "share": 0.94908
+            },
+            "identity": {
+              "count": 2,
+              "share": 8e-05
+            },
+            "jpeg10": {
+              "count": 0,
+              "share": 0.0
+            },
+            "jpeg20": {
+              "count": 773,
+              "share": 0.03092
+            }
+          },
+          "default_accuracy": 61.96,
+          "gain": -0.9160000000000057,
+          "n": 25000,
+          "paired_lcb": -1.0455174825648939,
+          "router_accuracy": 61.044
+        },
+        "elastic_transform": {
+          "action_distribution": {
+            "config_a": {
+              "count": 1244,
+              "share": 0.04976
+            },
+            "config_a10": {
+              "count": 22,
+              "share": 0.00088
+            },
+            "config_b": {
+              "count": 812,
+              "share": 0.03248
+            },
+            "dncnn": {
+              "count": 21129,
+              "share": 0.84516
+            },
+            "identity": {
+              "count": 1,
+              "share": 4e-05
+            },
+            "jpeg10": {
+              "count": 3,
+              "share": 0.00012
+            },
+            "jpeg20": {
+              "count": 1789,
+              "share": 0.07156
+            }
+          },
+          "default_accuracy": 49.5,
+          "gain": 0.5959999999999965,
+          "n": 25000,
+          "paired_lcb": 0.389443192517979,
+          "router_accuracy": 50.096
+        },
+        "jpeg_compression": {
+          "action_distribution": {
+            "config_a": {
+              "count": 244,
+              "share": 0.00976
+            },
+            "config_a10": {
+              "count": 0,
+              "share": 0.0
+            },
+            "config_b": {
+              "count": 291,
+              "share": 0.01164
+            },
+            "dncnn": {
+              "count": 24298,
+              "share": 0.97192
+            },
+            "identity": {
+              "count": 0,
+              "share": 0.0
+            },
+            "jpeg10": {
+              "count": 0,
+              "share": 0.0
+            },
+            "jpeg20": {
+              "count": 167,
+              "share": 0.00668
+            }
+          },
+          "default_accuracy": 62.28399999999999,
+          "gain": -0.039999999999995595,
+          "n": 25000,
+          "paired_lcb": -0.08148324688342125,
+          "router_accuracy": 62.244
+        },
+        "pixelate": {
+          "action_distribution": {
+            "config_a": {
+              "count": 1989,
+              "share": 0.07956
+            },
+            "config_a10": {
+              "count": 86,
+              "share": 0.00344
+            },
+            "config_b": {
+              "count": 969,
+              "share": 0.03876
+            },
+            "dncnn": {
+              "count": 19242,
+              "share": 0.76968
+            },
+            "identity": {
+              "count": 0,
+              "share": 0.0
+            },
+            "jpeg10": {
+              "count": 2,
+              "share": 8e-05
+            },
+            "jpeg20": {
+              "count": 2712,
+              "share": 0.10848
+            }
+          },
+          "default_accuracy": 43.944,
+          "gain": 4.139999999999999,
+          "n": 25000,
+          "paired_lcb": 3.8485242054112327,
+          "router_accuracy": 48.083999999999996
+        }
+      },
+      "tau": 0.03,
+      "validation_accuracy_default": 54.422000000000004,
+      "validation_accuracy_router": 55.367,
+      "validation_gain": 0.9449999999999958
+    },
+    "0.05": {
+      "action_distribution": {
+        "config_a": {
+          "count": 2834,
+          "share": 0.02834
+        },
+        "config_a10": {
+          "count": 122,
+          "share": 0.00122
+        },
+        "config_b": {
+          "count": 1765,
+          "share": 0.01765
+        },
+        "dncnn": {
+          "count": 90766,
+          "share": 0.90766
+        },
+        "identity": {
+          "count": 0,
+          "share": 0.0
+        },
+        "jpeg10": {
+          "count": 5,
+          "share": 5e-05
+        },
+        "jpeg20": {
+          "count": 4508,
+          "share": 0.04508
+        }
+      },
+      "contrast_gain": -0.768000000000002,
+      "paired_lcb": 0.8132063071293459,
+      "per_corruption": {
+        "contrast": {
+          "action_distribution": {
+            "config_a": {
+              "count": 204,
+              "share": 0.00816
+            },
+            "config_a10": {
+              "count": 21,
+              "share": 0.00084
+            },
+            "config_b": {
+              "count": 147,
+              "share": 0.00588
+            },
+            "dncnn": {
+              "count": 24070,
+              "share": 0.9628
+            },
+            "identity": {
+              "count": 0,
+              "share": 0.0
+            },
+            "jpeg10": {
+              "count": 0,
+              "share": 0.0
+            },
+            "jpeg20": {
+              "count": 558,
+              "share": 0.02232
+            }
+          },
+          "default_accuracy": 61.96,
+          "gain": -0.768000000000002,
+          "n": 25000,
+          "paired_lcb": -0.8870376044908302,
+          "router_accuracy": 61.192
+        },
+        "elastic_transform": {
+          "action_distribution": {
+            "config_a": {
+              "count": 926,
+              "share": 0.03704
+            },
+            "config_a10": {
+              "count": 20,
+              "share": 0.0008
+            },
+            "config_b": {
+              "count": 659,
+              "share": 0.02636
+            },
+            "dncnn": {
+              "count": 21916,
+              "share": 0.87664
+            },
+            "identity": {
+              "count": 0,
+              "share": 0.0
+            },
+            "jpeg10": {
+              "count": 3,
+              "share": 0.00012
+            },
+            "jpeg20": {
+              "count": 1476,
+              "share": 0.05904
+            }
+          },
+          "default_accuracy": 49.5,
+          "gain": 0.5600000000000049,
+          "n": 25000,
+          "paired_lcb": 0.3668047910916273,
+          "router_accuracy": 50.06
+        },
+        "jpeg_compression": {
+          "action_distribution": {
+            "config_a": {
+              "count": 147,
+              "share": 0.00588
+            },
+            "config_a10": {
+              "count": 0,
+              "share": 0.0
+            },
+            "config_b": {
+              "count": 167,
+              "share": 0.00668
+            },
+            "dncnn": {
+              "count": 24585,
+              "share": 0.9834
+            },
+            "identity": {
+              "count": 0,
+              "share": 0.0
+            },
+            "jpeg10": {
+              "count": 0,
+              "share": 0.0
+            },
+            "jpeg20": {
+              "count": 101,
+              "share": 0.00404
+            }
+          },
+          "default_accuracy": 62.28399999999999,
+          "gain": -0.027999999999994696,
+          "n": 25000,
+          "paired_lcb": -0.06559846902759378,
+          "router_accuracy": 62.256
+        },
+        "pixelate": {
+          "action_distribution": {
+            "config_a": {
+              "count": 1557,
+              "share": 0.06228
+            },
+            "config_a10": {
+              "count": 81,
+              "share": 0.00324
+            },
+            "config_b": {
+              "count": 792,
+              "share": 0.03168
+            },
+            "dncnn": {
+              "count": 20195,
+              "share": 0.8078
+            },
+            "identity": {
+              "count": 0,
+              "share": 0.0
+            },
+            "jpeg10": {
+              "count": 2,
+              "share": 8e-05
+            },
+            "jpeg20": {
+              "count": 2373,
+              "share": 0.09492
+            }
+          },
+          "default_accuracy": 43.944,
+          "gain": 3.852,
+          "n": 25000,
+          "paired_lcb": 3.5743759359771183,
+          "router_accuracy": 47.796
+        }
+      },
+      "tau": 0.05,
+      "validation_accuracy_default": 54.422000000000004,
+      "validation_accuracy_router": 55.326,
+      "validation_gain": 0.9039999999999937
+    },
+    "0.10": {
+      "action_distribution": {
+        "config_a": {
+          "count": 1491,
+          "share": 0.01491
+        },
+        "config_a10": {
+          "count": 105,
+          "share": 0.00105
+        },
+        "config_b": {
+          "count": 1045,
+          "share": 0.01045
+        },
+        "dncnn": {
+          "count": 94058,
+          "share": 0.94058
+        },
+        "identity": {
+          "count": 0,
+          "share": 0.0
+        },
+        "jpeg10": {
+          "count": 5,
+          "share": 5e-05
+        },
+        "jpeg20": {
+          "count": 3296,
+          "share": 0.03296
+        }
+      },
+      "contrast_gain": -0.48400000000000665,
+      "paired_lcb": 0.7001911370597955,
+      "per_corruption": {
+        "contrast": {
+          "action_distribution": {
+            "config_a": {
+              "count": 93,
+              "share": 0.00372
+            },
+            "config_a10": {
+              "count": 16,
+              "share": 0.00064
+            },
+            "config_b": {
+              "count": 85,
+              "share": 0.0034
+            },
+            "dncnn": {
+              "count": 24471,
+              "share": 0.97884
+            },
+            "identity": {
+              "count": 0,
+              "share": 0.0
+            },
+            "jpeg10": {
+              "count": 0,
+              "share": 0.0
+            },
+            "jpeg20": {
+              "count": 335,
+              "share": 0.0134
+            }
+          },
+          "default_accuracy": 61.96,
+          "gain": -0.48400000000000665,
+          "n": 25000,
+          "paired_lcb": -0.5807916051659916,
+          "router_accuracy": 61.476
+        },
+        "elastic_transform": {
+          "action_distribution": {
+            "config_a": {
+              "count": 483,
+              "share": 0.01932
+            },
+            "config_a10": {
+              "count": 17,
+              "share": 0.00068
+            },
+            "config_b": {
+              "count": 390,
+              "share": 0.0156
+            },
+            "dncnn": {
+              "count": 23042,
+              "share": 0.92168
+            },
+            "identity": {
+              "count": 0,
+              "share": 0.0
+            },
+            "jpeg10": {
+              "count": 3,
+              "share": 0.00012
+            },
+            "jpeg20": {
+              "count": 1065,
+              "share": 0.0426
+            }
+          },
+          "default_accuracy": 49.5,
+          "gain": 0.491999999999998,
+          "n": 25000,
+          "paired_lcb": 0.3301060128848926,
+          "router_accuracy": 49.992
+        },
+        "jpeg_compression": {
+          "action_distribution": {
+            "config_a": {
+              "count": 50,
+              "share": 0.002
+            },
+            "config_a10": {
+              "count": 0,
+              "share": 0.0
+            },
+            "config_b": {
+              "count": 54,
+              "share": 0.00216
+            },
+            "dncnn": {
+              "count": 24863,
+              "share": 0.99452
+            },
+            "identity": {
+              "count": 0,
+              "share": 0.0
+            },
+            "jpeg10": {
+              "count": 0,
+              "share": 0.0
+            },
+            "jpeg20": {
+              "count": 33,
+              "share": 0.00132
+            }
+          },
+          "default_accuracy": 62.28399999999999,
+          "gain": -0.027999999999994696,
+          "n": 25000,
+          "paired_lcb": -0.05626595630781736,
+          "router_accuracy": 62.256
+        },
+        "pixelate": {
+          "action_distribution": {
+            "config_a": {
+              "count": 865,
+              "share": 0.0346
+            },
+            "config_a10": {
+              "count": 72,
+              "share": 0.00288
+            },
+            "config_b": {
+              "count": 516,
+              "share": 0.02064
+            },
+            "dncnn": {
+              "count": 21682,
+              "share": 0.86728
+            },
+            "identity": {
+              "count": 0,
+              "share": 0.0
+            },
+            "jpeg10": {
+              "count": 2,
+              "share": 8e-05
+            },
+            "jpeg20": {
+              "count": 1863,
+              "share": 0.07452
+            }
+          },
+          "default_accuracy": 43.944,
+          "gain": 3.1320000000000014,
+          "n": 25000,
+          "paired_lcb": 2.8885159256743025,
+          "router_accuracy": 47.076
+        }
+      },
+      "tau": 0.1,
+      "validation_accuracy_default": 54.422000000000004,
+      "validation_accuracy_router": 55.2,
+      "validation_gain": 0.7780000000000009
+    },
+    "0.15": {
+      "action_distribution": {
+        "config_a": {
+          "count": 732,
+          "share": 0.00732
+        },
+        "config_a10": {
+          "count": 96,
+          "share": 0.00096
+        },
+        "config_b": {
+          "count": 600,
+          "share": 0.006
+        },
+        "dncnn": {
+          "count": 95924,
+          "share": 0.95924
+        },
+        "identity": {
+          "count": 0,
+          "share": 0.0
+        },
+        "jpeg10": {
+          "count": 5,
+          "share": 5e-05
+        },
+        "jpeg20": {
+          "count": 2643,
+          "share": 0.02643
+        }
+      },
+      "contrast_gain": -0.31600000000000517,
+      "paired_lcb": 0.6168622556331299,
+      "per_corruption": {
+        "contrast": {
+          "action_distribution": {
+            "config_a": {
+              "count": 45,
+              "share": 0.0018
+            },
+            "config_a10": {
+              "count": 14,
+              "share": 0.00056
+            },
+            "config_b": {
+              "count": 43,
+              "share": 0.00172
+            },
+            "dncnn": {
+              "count": 24661,
+              "share": 0.98644
+            },
+            "identity": {
+              "count": 0,
+              "share": 0.0
+            },
+            "jpeg10": {
+              "count": 0,
+              "share": 0.0
+            },
+            "jpeg20": {
+              "count": 237,
+              "share": 0.00948
+            }
+          },
+          "default_accuracy": 61.96,
+          "gain": -0.31600000000000517,
+          "n": 25000,
+          "paired_lcb": -0.39311716287499426,
+          "router_accuracy": 61.644
+        },
+        "elastic_transform": {
+          "action_distribution": {
+            "config_a": {
+              "count": 204,
+              "share": 0.00816
+            },
+            "config_a10": {
+              "count": 16,
+              "share": 0.00064
+            },
+            "config_b": {
+              "count": 216,
+              "share": 0.00864
+            },
+            "dncnn": {
+              "count": 23738,
+              "share": 0.94952
+            },
+            "identity": {
+              "count": 0,
+              "share": 0.0
+            },
+            "jpeg10": {
+              "count": 3,
+              "share": 0.00012
+            },
+            "jpeg20": {
+              "count": 823,
+              "share": 0.03292
+            }
+          },
+          "default_accuracy": 49.5,
+          "gain": 0.5120000000000013,
+          "n": 25000,
+          "paired_lcb": 0.3795629164938027,
+          "router_accuracy": 50.012
+        },
+        "jpeg_compression": {
+          "action_distribution": {
+            "config_a": {
+              "count": 11,
+              "share": 0.00044
+            },
+            "config_a10": {
+              "count": 0,
+              "share": 0.0
+            },
+            "config_b": {
+              "count": 16,
+              "share": 0.00064
+            },
+            "dncnn": {
+              "count": 24957,
+              "share": 0.99828
+            },
+            "identity": {
+              "count": 0,
+              "share": 0.0
+            },
+            "jpeg10": {
+              "count": 0,
+              "share": 0.0
+            },
+            "jpeg20": {
+              "count": 16,
+              "share": 0.00064
+            }
+          },
+          "default_accuracy": 62.28399999999999,
+          "gain": -0.019999999999997797,
+          "n": 25000,
+          "paired_lcb": -0.03752937036955469,
+          "router_accuracy": 62.263999999999996
+        },
+        "pixelate": {
+          "action_distribution": {
+            "config_a": {
+              "count": 472,
+              "share": 0.01888
+            },
+            "config_a10": {
+              "count": 66,
+              "share": 0.00264
+            },
+            "config_b": {
+              "count": 325,
+              "share": 0.013
+            },
+            "dncnn": {
+              "count": 22568,
+              "share": 0.90272
+            },
+            "identity": {
+              "count": 0,
+              "share": 0.0
+            },
+            "jpeg10": {
+              "count": 2,
+              "share": 8e-05
+            },
+            "jpeg20": {
+              "count": 1567,
+              "share": 0.06268
+            }
+          },
+          "default_accuracy": 43.944,
+          "gain": 2.5600000000000014,
+          "n": 25000,
+          "paired_lcb": 2.341934244512008,
+          "router_accuracy": 46.504
+        }
+      },
+      "tau": 0.15,
+      "validation_accuracy_default": 54.422000000000004,
+      "validation_accuracy_router": 55.106,
+      "validation_gain": 0.6839999999999957
+    }
+  },
+  "validation_accuracy_default": 54.422000000000004,
+  "validation_accuracy_router": 55.387,
+  "validation_gain": 0.9649999999999936
+}

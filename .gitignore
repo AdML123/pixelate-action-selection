@@ -15,3 +15,6 @@ data/raw/
 data/digital/
 model_zoo/
 external/
+!data/features/*.npy
+!data/features_test/*.npy
+!data/router/*.pt

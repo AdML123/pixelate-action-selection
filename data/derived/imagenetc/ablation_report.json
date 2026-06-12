@@ -1,8 +1,8 @@
 {
-  "command": "code\\evaluate_router.py --features-root data\\features --test-features-root data\\features_test --action-csv data\\action_eval\\action_eval.csv --router-dir data\\router --outdir data\\derived\\imagenetc",
+  "command": "code\\evaluate_router.py --features-root data\\features --test-features-root data\\features_test --action-csv data\\action_eval\\action_eval.csv.gz --router-dir data\\router --outdir data\\derived\\imagenetc",
   "default_action": "dncnn",
-  "elapsed_seconds": 74.937,
-  "end_time_utc": "2026-06-12T04:26:39.447956+00:00",
+  "elapsed_seconds": 95.3,
+  "end_time_utc": "2026-06-12T11:38:21.701741+00:00",
   "environment": {
     "cuda_available": true,
     "device": "cuda",
@@ -33,7 +33,7 @@
     "jpeg20_entropy"
   ],
   "inputs": {
-    "action_csv": "data/action_eval/action_eval.csv",
+    "action_csv": "data/action_eval/action_eval.csv.gz",
     "features_root": "data/features",
     "router_dir": "data/router",
     "test_features_root": "data/features_test"
@@ -3092,5 +3092,5 @@
     }
   },
   "schema_version": 1,
-  "start_time_utc": "2026-06-12T04:25:24.510492+00:00"
+  "start_time_utc": "2026-06-12T11:36:46.402739+00:00"
 }

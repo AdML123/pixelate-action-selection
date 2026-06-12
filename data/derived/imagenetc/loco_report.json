@@ -1,5 +1,16 @@
 {
+  "command": "code\\run_loco.py --features-root data\\features --action-csv data\\action_eval\\action_eval.csv.gz --outdir data\\derived\\imagenetc --epochs 50 --batch-size 256 --lr 1e-3",
   "default_action": "dncnn",
+  "elapsed_seconds": 19.122,
+  "end_time_utc": "2026-06-12T11:39:03.626687+00:00",
+  "environment": {
+    "cuda_available": true,
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce RTX 5060 Ti",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python": "3.10.20",
+    "torch": "2.11.0+cu128"
+  },
   "feature_set": "all",
   "folds": {
     "contrast": {
@@ -35,7 +46,7 @@
         }
       },
       "best_validation_loss": 0.49288445711135864,
-      "checkpoint": "loco_router_holdout_contrast.pt",
+      "checkpoint": "data\\derived\\imagenetc\\loco_router_holdout_contrast.pt",
       "default_accuracy": 61.96,
       "epochs_ran": 20,
       "gain": -0.22000000000000908,
@@ -453,7 +464,7 @@
         }
       },
       "best_validation_loss": 0.5230729579925537,
-      "checkpoint": "loco_router_holdout_elastic_transform.pt",
+      "checkpoint": "data\\derived\\imagenetc\\loco_router_holdout_elastic_transform.pt",
       "default_accuracy": 49.5,
       "epochs_ran": 50,
       "gain": 0.31200000000000117,
@@ -1021,7 +1032,7 @@
         }
       },
       "best_validation_loss": 0.5648496747016907,
-      "checkpoint": "loco_router_holdout_jpeg_compression.pt",
+      "checkpoint": "data\\derived\\imagenetc\\loco_router_holdout_jpeg_compression.pt",
       "default_accuracy": 62.28399999999999,
       "epochs_ran": 13,
       "gain": 0.008000000000008,
@@ -1404,7 +1415,7 @@
         }
       },
       "best_validation_loss": 0.5237883925437927,
-      "checkpoint": "loco_router_holdout_pixelate.pt",
+      "checkpoint": "data\\derived\\imagenetc\\loco_router_holdout_pixelate.pt",
       "default_accuracy": 43.944,
       "epochs_ran": 14,
       "gain": 3.8080000000000003,
@@ -1777,5 +1788,6 @@
     ],
     "weight_decay": 0.0001
   },
-  "schema_version": 1
+  "schema_version": 1,
+  "start_time_utc": "2026-06-12T11:38:44.505725+00:00"
 }

@@ -13,6 +13,7 @@ from pathlib import Path
 import numpy as np
 
 from pixelate_router.features_imagenetc import FEATURE_NAMES
+from pixelate_router.io import open_text
 from pixelate_router.router import hfer_rule, paired_lcb, select_with_threshold, two_threshold_rule
 from train_router import ACTIONS, CORRUPTIONS, DEFAULT_ACTION, DEFAULT_INDEX, FEATURE_SETS, SEVERITIES
 
@@ -288,7 +289,7 @@ def _has_split_features(features_root: Path, split: str) -> bool:
 
 def _load_action_rows(action_csv: Path) -> dict:
     rows = defaultdict(list)
-    with action_csv.open(newline="", encoding="utf-8") as handle:
+    with open_text(action_csv, newline="", encoding="utf-8") as handle:
         for row in csv.DictReader(handle):
             rows[(row["split"], row["corruption"], int(row["severity"]))].append(row)
     return rows

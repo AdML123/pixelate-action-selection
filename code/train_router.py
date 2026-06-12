@@ -14,6 +14,7 @@ from pathlib import Path
 import numpy as np
 
 from pixelate_router.features_imagenetc import FEATURE_NAMES
+from pixelate_router.io import open_text
 from pixelate_router.router import paired_lcb, select_with_threshold
 
 
@@ -269,7 +270,7 @@ def _load_split(features_root: Path, action_rows: dict, split: str, feature_name
 
 def _load_action_rows(action_csv: Path) -> dict:
     rows = defaultdict(list)
-    with action_csv.open(newline="", encoding="utf-8") as handle:
+    with open_text(action_csv, newline="", encoding="utf-8") as handle:
         for row in csv.DictReader(handle):
             if row["split"] in {"search", "validation"}:
                 rows[(row["split"], row["corruption"], int(row["severity"]))].append(row)

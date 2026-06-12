@@ -10,6 +10,7 @@ import numpy as np
 
 from pixelate_router.features_imagenetc import FEATURE_NAMES
 from oracle_ceiling import load_rgb_float
+from pixelate_router.io import open_text
 from pixelate_router.router import select_with_threshold
 from pixelate_router.imagenetc_digital import iter_image_records
 
@@ -525,7 +526,7 @@ def _router_curve(corr: str, action_csv: str, features_root: str, router_checkpo
 
 def _action_rows(action_csv: str, corr: str) -> dict[int, list[dict]]:
     rows = {severity: [] for severity in range(1, 6)}
-    with Path(action_csv).open(newline="", encoding="utf-8") as handle:
+    with open_text(action_csv, newline="", encoding="utf-8") as handle:
         for row in csv.DictReader(handle):
             if row["split"] == "test" and row["corruption"] == corr:
                 rows[int(row["severity"])].append(row)

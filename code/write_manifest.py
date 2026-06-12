@@ -22,7 +22,7 @@ def main() -> int:
     for path in sorted(root.rglob("*")):
         if not path.is_file() or path == output:
             continue
-        if "__pycache__" in path.parts or ".pytest_cache" in path.parts:
+        if ".git" in path.parts or "__pycache__" in path.parts or ".pytest_cache" in path.parts:
             continue
         rows.append(f"{digest(path)}  {path.relative_to(root).as_posix()}")
     output.write_text("\n".join(rows) + "\n", encoding="utf-8")

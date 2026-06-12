@@ -10,10 +10,12 @@ The public repository is `https://github.com/AdML123/pixelate-action-selection`.
 After cloning the public repository, run `git rev-parse HEAD` to record the
 exact commit used for a review or camera-ready result snapshot.
 
-The compact JSON and CSV files under `data/derived/imagenetc/` and
-`data/source/` are sufficient to regenerate the numerical tables and the
-aggregate figures. The case figure uses one ImageNet-C pixelate image when a
-local authorized dataset copy is supplied.
+The package includes derived per-image action outputs, feature matrices, router
+checkpoints, compact result summaries, generated tables, and generated figures.
+These artifacts are sufficient to recompute the reported numerical tables and
+aggregate figures without rerunning ImageNet-C image inference. The case figure
+uses one ImageNet-C pixelate image when a local authorized dataset copy is
+supplied.
 
 ## Reported Claims
 
@@ -37,6 +39,9 @@ From this package directory:
 
 ```powershell
 python -m pytest tests
+python code/evaluate_router.py --features-root data/features --test-features-root data/features_test --action-csv data/action_eval/action_eval.csv.gz --router-dir data/router --outdir data/derived/imagenetc
+python code/evaluate_corruption_detector.py --features-root data/features --test-features-root data/features_test --action-csv data/action_eval/action_eval.csv.gz --outdir data/derived/imagenetc
+python code/make_pixelate_severity_table.py --action-csv data/action_eval/action_eval.csv.gz --features-root-test data/features_test --router-checkpoint data/router/router_all.pt --outdir data/source
 python code/make_tables.py --outdir tables/imagenetc
 python code/make_figures.py --outdir figures/imagenetc
 python code/verify_results.py --results data/derived/imagenetc --tables tables/imagenetc --figures figures/imagenetc
@@ -86,9 +91,10 @@ To inspect the exact subcommands before a full run:
 python code/run_experiments.py --config configs/local.yaml --dry-run
 ```
 
-The public package keeps compact derived summaries and figure source data.
-Large per-image CSV files, feature matrices, checkpoints, raw images, logs,
-and LaTeX build caches are intentionally excluded.
+The public package keeps the compressed per-image action CSV, feature matrices,
+router checkpoints, compact derived summaries, and figure/table source data.
+Raw ImageNet-C images, external model checkpoints, logs, and LaTeX build caches
+are intentionally excluded.
 
 ## Result Summary
 

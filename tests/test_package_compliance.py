@@ -52,6 +52,17 @@ def test_public_package_has_no_runtime_cache_artifacts():
     assert offenders == []
 
 
+def test_manifest_does_not_include_git_metadata():
+    manifest = PACKAGE_ROOT / "MANIFEST.sha256"
+    entries = [
+        Path(line.split("  ", 1)[1])
+        for line in manifest.read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    ]
+
+    assert all(".git" not in entry.parts for entry in entries)
+
+
 def test_derived_artifacts_do_not_expose_private_work_paths():
     slash = chr(92)
     forbidden = ["local_" + "review", "D:" + slash, "C:" + slash, "/" + "Users/", slash + "Users" + slash]

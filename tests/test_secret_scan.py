@@ -31,3 +31,15 @@ def test_secret_scan_skips_git_directory(tmp_path):
     files = list(iter_text_files(tmp_path))
 
     assert files == [visible]
+
+
+def test_secret_scan_skips_binary_feature_matrices(tmp_path):
+    matrix = tmp_path / "features.npy"
+    slash = chr(92)
+    matrix.write_bytes(("binary-ish D:" + slash + "local").encode("utf-8"))
+    visible = tmp_path / "README.md"
+    visible.write_text("relative data/features/features.npy", encoding="utf-8")
+
+    files = list(iter_text_files(tmp_path))
+
+    assert files == [visible]

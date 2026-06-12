@@ -1,0 +1,2714 @@
+{
+  "command": "github_package\\code\\evaluate_router.py --features-root github_package\\data\\derived_imagenetc_features --test-features-root github_package\\data\\derived_imagenetc_features_test --action-csv github_package\\data\\derived_imagenetc_action_eval\\action_eval.csv --router-dir github_package\\data\\derived_imagenetc_router --outdir github_package\\data\\derived_imagenetc_router",
+  "default_action": "dncnn",
+  "elapsed_seconds": 102.482,
+  "end_time_utc": "2026-06-11T08:32:07.499537+00:00",
+  "environment": {
+    "cuda_available": true,
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce RTX 5060 Ti",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python": "3.10.20",
+    "torch": "2.11.0+cu128"
+  },
+  "feature_names": [
+    "hfer_input",
+    "m_comm",
+    "band_low",
+    "band_mid",
+    "band_high",
+    "comm_band_low",
+    "comm_band_mid",
+    "comm_band_high",
+    "hfer_jpeg20_residual",
+    "hfer_dncnn_residual",
+    "identity_top1_prob",
+    "identity_margin",
+    "identity_entropy",
+    "dncnn_top1_prob",
+    "dncnn_margin",
+    "dncnn_entropy",
+    "jpeg20_top1_prob",
+    "jpeg20_margin",
+    "jpeg20_entropy"
+  ],
+  "inputs": {
+    "action_csv": "data/action_eval/action_eval.csv.gz",
+    "features_root": "data/features",
+    "router_dir": "data/router",
+    "test_features_root": "data/features_test"
+  },
+  "policies": {
+    "best_fixed": {
+      "policy": "best_fixed",
+      "selected": {
+        "action": "dncnn"
+      },
+      "test": {
+        "accuracy": 53.99850000000001,
+        "action_distribution": {
+          "config_a": {
+            "count": 0,
+            "share": 0.0
+          },
+          "config_a10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "config_b": {
+            "count": 0,
+            "share": 0.0
+          },
+          "dncnn": {
+            "count": 200000,
+            "share": 1.0
+          },
+          "identity": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg20": {
+            "count": 0,
+            "share": 0.0
+          }
+        },
+        "default_accuracy": 53.99850000000001,
+        "gain": 0.0,
+        "n": 200000,
+        "paired_lcb": 0.0,
+        "per_corruption": {
+          "contrast": {
+            "accuracy": 61.666,
+            "action_distribution": {
+              "config_a": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_a10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_b": {
+                "count": 0,
+                "share": 0.0
+              },
+              "dncnn": {
+                "count": 50000,
+                "share": 1.0
+              },
+              "identity": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg20": {
+                "count": 0,
+                "share": 0.0
+              }
+            },
+            "default_accuracy": 61.666,
+            "gain": 0.0,
+            "n": 50000,
+            "paired_lcb": 0.0
+          },
+          "elastic_transform": {
+            "accuracy": 48.784,
+            "action_distribution": {
+              "config_a": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_a10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_b": {
+                "count": 0,
+                "share": 0.0
+              },
+              "dncnn": {
+                "count": 50000,
+                "share": 1.0
+              },
+              "identity": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg20": {
+                "count": 0,
+                "share": 0.0
+              }
+            },
+            "default_accuracy": 48.784,
+            "gain": 0.0,
+            "n": 50000,
+            "paired_lcb": 0.0
+          },
+          "jpeg_compression": {
+            "accuracy": 61.966,
+            "action_distribution": {
+              "config_a": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_a10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_b": {
+                "count": 0,
+                "share": 0.0
+              },
+              "dncnn": {
+                "count": 50000,
+                "share": 1.0
+              },
+              "identity": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg20": {
+                "count": 0,
+                "share": 0.0
+              }
+            },
+            "default_accuracy": 61.966,
+            "gain": 0.0,
+            "n": 50000,
+            "paired_lcb": 0.0
+          },
+          "pixelate": {
+            "accuracy": 43.578,
+            "action_distribution": {
+              "config_a": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_a10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_b": {
+                "count": 0,
+                "share": 0.0
+              },
+              "dncnn": {
+                "count": 50000,
+                "share": 1.0
+              },
+              "identity": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg20": {
+                "count": 0,
+                "share": 0.0
+              }
+            },
+            "default_accuracy": 43.578,
+            "gain": 0.0,
+            "n": 50000,
+            "paired_lcb": 0.0
+          }
+        }
+      },
+      "validation": {
+        "accuracy": 54.422000000000004,
+        "action_distribution": {
+          "config_a": {
+            "count": 0,
+            "share": 0.0
+          },
+          "config_a10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "config_b": {
+            "count": 0,
+            "share": 0.0
+          },
+          "dncnn": {
+            "count": 100000,
+            "share": 1.0
+          },
+          "identity": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg20": {
+            "count": 0,
+            "share": 0.0
+          }
+        },
+        "default_accuracy": 54.422000000000004,
+        "gain": 0.0,
+        "n": 100000,
+        "paired_lcb": 0.0,
+        "per_corruption": {
+          "contrast": {
+            "accuracy": 61.96,
+            "action_distribution": {
+              "config_a": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_a10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_b": {
+                "count": 0,
+                "share": 0.0
+              },
+              "dncnn": {
+                "count": 25000,
+                "share": 1.0
+              },
+              "identity": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg20": {
+                "count": 0,
+                "share": 0.0
+              }
+            },
+            "default_accuracy": 61.96,
+            "gain": 0.0,
+            "n": 25000,
+            "paired_lcb": 0.0
+          },
+          "elastic_transform": {
+            "accuracy": 49.5,
+            "action_distribution": {
+              "config_a": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_a10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_b": {
+                "count": 0,
+                "share": 0.0
+              },
+              "dncnn": {
+                "count": 25000,
+                "share": 1.0
+              },
+              "identity": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg20": {
+                "count": 0,
+                "share": 0.0
+              }
+            },
+            "default_accuracy": 49.5,
+            "gain": 0.0,
+            "n": 25000,
+            "paired_lcb": 0.0
+          },
+          "jpeg_compression": {
+            "accuracy": 62.28399999999999,
+            "action_distribution": {
+              "config_a": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_a10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_b": {
+                "count": 0,
+                "share": 0.0
+              },
+              "dncnn": {
+                "count": 25000,
+                "share": 1.0
+              },
+              "identity": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg20": {
+                "count": 0,
+                "share": 0.0
+              }
+            },
+            "default_accuracy": 62.28399999999999,
+            "gain": 0.0,
+            "n": 25000,
+            "paired_lcb": 0.0
+          },
+          "pixelate": {
+            "accuracy": 43.944,
+            "action_distribution": {
+              "config_a": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_a10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_b": {
+                "count": 0,
+                "share": 0.0
+              },
+              "dncnn": {
+                "count": 25000,
+                "share": 1.0
+              },
+              "identity": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg20": {
+                "count": 0,
+                "share": 0.0
+              }
+            },
+            "default_accuracy": 43.944,
+            "gain": 0.0,
+            "n": 25000,
+            "paired_lcb": 0.0
+          }
+        }
+      }
+    },
+    "default_dncnn": {
+      "policy": "default_dncnn",
+      "selected": {
+        "action": "dncnn"
+      },
+      "test": {
+        "accuracy": 53.99850000000001,
+        "action_distribution": {
+          "config_a": {
+            "count": 0,
+            "share": 0.0
+          },
+          "config_a10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "config_b": {
+            "count": 0,
+            "share": 0.0
+          },
+          "dncnn": {
+            "count": 200000,
+            "share": 1.0
+          },
+          "identity": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg20": {
+            "count": 0,
+            "share": 0.0
+          }
+        },
+        "default_accuracy": 53.99850000000001,
+        "gain": 0.0,
+        "n": 200000,
+        "paired_lcb": 0.0,
+        "per_corruption": {
+          "contrast": {
+            "accuracy": 61.666,
+            "action_distribution": {
+              "config_a": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_a10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_b": {
+                "count": 0,
+                "share": 0.0
+              },
+              "dncnn": {
+                "count": 50000,
+                "share": 1.0
+              },
+              "identity": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg20": {
+                "count": 0,
+                "share": 0.0
+              }
+            },
+            "default_accuracy": 61.666,
+            "gain": 0.0,
+            "n": 50000,
+            "paired_lcb": 0.0
+          },
+          "elastic_transform": {
+            "accuracy": 48.784,
+            "action_distribution": {
+              "config_a": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_a10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_b": {
+                "count": 0,
+                "share": 0.0
+              },
+              "dncnn": {
+                "count": 50000,
+                "share": 1.0
+              },
+              "identity": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg20": {
+                "count": 0,
+                "share": 0.0
+              }
+            },
+            "default_accuracy": 48.784,
+            "gain": 0.0,
+            "n": 50000,
+            "paired_lcb": 0.0
+          },
+          "jpeg_compression": {
+            "accuracy": 61.966,
+            "action_distribution": {
+              "config_a": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_a10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_b": {
+                "count": 0,
+                "share": 0.0
+              },
+              "dncnn": {
+                "count": 50000,
+                "share": 1.0
+              },
+              "identity": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg20": {
+                "count": 0,
+                "share": 0.0
+              }
+            },
+            "default_accuracy": 61.966,
+            "gain": 0.0,
+            "n": 50000,
+            "paired_lcb": 0.0
+          },
+          "pixelate": {
+            "accuracy": 43.578,
+            "action_distribution": {
+              "config_a": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_a10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_b": {
+                "count": 0,
+                "share": 0.0
+              },
+              "dncnn": {
+                "count": 50000,
+                "share": 1.0
+              },
+              "identity": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg20": {
+                "count": 0,
+                "share": 0.0
+              }
+            },
+            "default_accuracy": 43.578,
+            "gain": 0.0,
+            "n": 50000,
+            "paired_lcb": 0.0
+          }
+        }
+      },
+      "validation": {
+        "accuracy": 54.422000000000004,
+        "action_distribution": {
+          "config_a": {
+            "count": 0,
+            "share": 0.0
+          },
+          "config_a10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "config_b": {
+            "count": 0,
+            "share": 0.0
+          },
+          "dncnn": {
+            "count": 100000,
+            "share": 1.0
+          },
+          "identity": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg20": {
+            "count": 0,
+            "share": 0.0
+          }
+        },
+        "default_accuracy": 54.422000000000004,
+        "gain": 0.0,
+        "n": 100000,
+        "paired_lcb": 0.0,
+        "per_corruption": {
+          "contrast": {
+            "accuracy": 61.96,
+            "action_distribution": {
+              "config_a": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_a10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_b": {
+                "count": 0,
+                "share": 0.0
+              },
+              "dncnn": {
+                "count": 25000,
+                "share": 1.0
+              },
+              "identity": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg20": {
+                "count": 0,
+                "share": 0.0
+              }
+            },
+            "default_accuracy": 61.96,
+            "gain": 0.0,
+            "n": 25000,
+            "paired_lcb": 0.0
+          },
+          "elastic_transform": {
+            "accuracy": 49.5,
+            "action_distribution": {
+              "config_a": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_a10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_b": {
+                "count": 0,
+                "share": 0.0
+              },
+              "dncnn": {
+                "count": 25000,
+                "share": 1.0
+              },
+              "identity": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg20": {
+                "count": 0,
+                "share": 0.0
+              }
+            },
+            "default_accuracy": 49.5,
+            "gain": 0.0,
+            "n": 25000,
+            "paired_lcb": 0.0
+          },
+          "jpeg_compression": {
+            "accuracy": 62.28399999999999,
+            "action_distribution": {
+              "config_a": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_a10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_b": {
+                "count": 0,
+                "share": 0.0
+              },
+              "dncnn": {
+                "count": 25000,
+                "share": 1.0
+              },
+              "identity": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg20": {
+                "count": 0,
+                "share": 0.0
+              }
+            },
+            "default_accuracy": 62.28399999999999,
+            "gain": 0.0,
+            "n": 25000,
+            "paired_lcb": 0.0
+          },
+          "pixelate": {
+            "accuracy": 43.944,
+            "action_distribution": {
+              "config_a": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_a10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_b": {
+                "count": 0,
+                "share": 0.0
+              },
+              "dncnn": {
+                "count": 25000,
+                "share": 1.0
+              },
+              "identity": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg20": {
+                "count": 0,
+                "share": 0.0
+              }
+            },
+            "default_accuracy": 43.944,
+            "gain": 0.0,
+            "n": 25000,
+            "paired_lcb": 0.0
+          }
+        }
+      }
+    },
+    "hfer_rule": {
+      "policy": "hfer_rule",
+      "selected": {
+        "fallback": "dncnn",
+        "switch_action": "config_a10",
+        "theta": 0.27
+      },
+      "test": {
+        "accuracy": 53.9915,
+        "action_distribution": {
+          "config_a": {
+            "count": 0,
+            "share": 0.0
+          },
+          "config_a10": {
+            "count": 26,
+            "share": 0.00013
+          },
+          "config_b": {
+            "count": 0,
+            "share": 0.0
+          },
+          "dncnn": {
+            "count": 199974,
+            "share": 0.99987
+          },
+          "identity": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg20": {
+            "count": 0,
+            "share": 0.0
+          }
+        },
+        "default_accuracy": 53.99850000000001,
+        "gain": -0.0070000000000014495,
+        "n": 200000,
+        "paired_lcb": -0.010666705064718207,
+        "per_corruption": {
+          "contrast": {
+            "accuracy": 61.644,
+            "action_distribution": {
+              "config_a": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_a10": {
+                "count": 14,
+                "share": 0.00028
+              },
+              "config_b": {
+                "count": 0,
+                "share": 0.0
+              },
+              "dncnn": {
+                "count": 49986,
+                "share": 0.99972
+              },
+              "identity": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg20": {
+                "count": 0,
+                "share": 0.0
+              }
+            },
+            "default_accuracy": 61.666,
+            "gain": -0.021999999999999797,
+            "n": 50000,
+            "paired_lcb": -0.034999868970257544
+          },
+          "elastic_transform": {
+            "accuracy": 48.784,
+            "action_distribution": {
+              "config_a": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_a10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_b": {
+                "count": 0,
+                "share": 0.0
+              },
+              "dncnn": {
+                "count": 50000,
+                "share": 1.0
+              },
+              "identity": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg20": {
+                "count": 0,
+                "share": 0.0
+              }
+            },
+            "default_accuracy": 48.784,
+            "gain": 0.0,
+            "n": 50000,
+            "paired_lcb": 0.0
+          },
+          "jpeg_compression": {
+            "accuracy": 61.96,
+            "action_distribution": {
+              "config_a": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_a10": {
+                "count": 10,
+                "share": 0.0002
+              },
+              "config_b": {
+                "count": 0,
+                "share": 0.0
+              },
+              "dncnn": {
+                "count": 49990,
+                "share": 0.9998
+              },
+              "identity": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg20": {
+                "count": 0,
+                "share": 0.0
+              }
+            },
+            "default_accuracy": 61.966,
+            "gain": -0.005999999999994898,
+            "n": 50000,
+            "paired_lcb": -0.012789503368812764
+          },
+          "pixelate": {
+            "accuracy": 43.578,
+            "action_distribution": {
+              "config_a": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_a10": {
+                "count": 2,
+                "share": 4e-05
+              },
+              "config_b": {
+                "count": 0,
+                "share": 0.0
+              },
+              "dncnn": {
+                "count": 49998,
+                "share": 0.99996
+              },
+              "identity": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg20": {
+                "count": 0,
+                "share": 0.0
+              }
+            },
+            "default_accuracy": 43.578,
+            "gain": 0.0,
+            "n": 50000,
+            "paired_lcb": 0.0
+          }
+        }
+      },
+      "validation": {
+        "accuracy": 54.422000000000004,
+        "action_distribution": {
+          "config_a": {
+            "count": 0,
+            "share": 0.0
+          },
+          "config_a10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "config_b": {
+            "count": 0,
+            "share": 0.0
+          },
+          "dncnn": {
+            "count": 100000,
+            "share": 1.0
+          },
+          "identity": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg20": {
+            "count": 0,
+            "share": 0.0
+          }
+        },
+        "default_accuracy": 54.422000000000004,
+        "gain": 0.0,
+        "n": 100000,
+        "paired_lcb": 0.0,
+        "per_corruption": {
+          "contrast": {
+            "accuracy": 61.96,
+            "action_distribution": {
+              "config_a": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_a10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_b": {
+                "count": 0,
+                "share": 0.0
+              },
+              "dncnn": {
+                "count": 25000,
+                "share": 1.0
+              },
+              "identity": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg20": {
+                "count": 0,
+                "share": 0.0
+              }
+            },
+            "default_accuracy": 61.96,
+            "gain": 0.0,
+            "n": 25000,
+            "paired_lcb": 0.0
+          },
+          "elastic_transform": {
+            "accuracy": 49.5,
+            "action_distribution": {
+              "config_a": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_a10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_b": {
+                "count": 0,
+                "share": 0.0
+              },
+              "dncnn": {
+                "count": 25000,
+                "share": 1.0
+              },
+              "identity": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg20": {
+                "count": 0,
+                "share": 0.0
+              }
+            },
+            "default_accuracy": 49.5,
+            "gain": 0.0,
+            "n": 25000,
+            "paired_lcb": 0.0
+          },
+          "jpeg_compression": {
+            "accuracy": 62.28399999999999,
+            "action_distribution": {
+              "config_a": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_a10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_b": {
+                "count": 0,
+                "share": 0.0
+              },
+              "dncnn": {
+                "count": 25000,
+                "share": 1.0
+              },
+              "identity": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg20": {
+                "count": 0,
+                "share": 0.0
+              }
+            },
+            "default_accuracy": 62.28399999999999,
+            "gain": 0.0,
+            "n": 25000,
+            "paired_lcb": 0.0
+          },
+          "pixelate": {
+            "accuracy": 43.944,
+            "action_distribution": {
+              "config_a": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_a10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_b": {
+                "count": 0,
+                "share": 0.0
+              },
+              "dncnn": {
+                "count": 25000,
+                "share": 1.0
+              },
+              "identity": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg20": {
+                "count": 0,
+                "share": 0.0
+              }
+            },
+            "default_accuracy": 43.944,
+            "gain": 0.0,
+            "n": 25000,
+            "paired_lcb": 0.0
+          }
+        }
+      }
+    },
+    "logistic_all": {
+      "feature_set": "all",
+      "policy": "logistic_all",
+      "selected": {
+        "checkpoint": "github_package\\data\\derived_imagenetc_router\\router_all.pt",
+        "tau": 0.03
+      },
+      "test": {
+        "accuracy": 55.3835,
+        "action_distribution": {
+          "config_a": {
+            "count": 15405,
+            "share": 0.077025
+          },
+          "config_a10": {
+            "count": 1850,
+            "share": 0.00925
+          },
+          "config_b": {
+            "count": 9670,
+            "share": 0.04835
+          },
+          "dncnn": {
+            "count": 161647,
+            "share": 0.808235
+          },
+          "identity": {
+            "count": 44,
+            "share": 0.00022
+          },
+          "jpeg10": {
+            "count": 1000,
+            "share": 0.005
+          },
+          "jpeg20": {
+            "count": 10384,
+            "share": 0.05192
+          }
+        },
+        "default_accuracy": 53.99850000000001,
+        "gain": 1.3849999999999918,
+        "n": 200000,
+        "paired_lcb": 1.3046897977661436,
+        "per_corruption": {
+          "contrast": {
+            "accuracy": 61.507999999999996,
+            "action_distribution": {
+              "config_a": {
+                "count": 105,
+                "share": 0.0021
+              },
+              "config_a10": {
+                "count": 2,
+                "share": 4e-05
+              },
+              "config_b": {
+                "count": 206,
+                "share": 0.00412
+              },
+              "dncnn": {
+                "count": 49445,
+                "share": 0.9889
+              },
+              "identity": {
+                "count": 10,
+                "share": 0.0002
+              },
+              "jpeg10": {
+                "count": 3,
+                "share": 6e-05
+              },
+              "jpeg20": {
+                "count": 229,
+                "share": 0.00458
+              }
+            },
+            "default_accuracy": 61.666,
+            "gain": -0.15800000000000258,
+            "n": 50000,
+            "paired_lcb": -0.2014532729456665
+          },
+          "elastic_transform": {
+            "accuracy": 49.29,
+            "action_distribution": {
+              "config_a": {
+                "count": 6562,
+                "share": 0.13124
+              },
+              "config_a10": {
+                "count": 501,
+                "share": 0.01002
+              },
+              "config_b": {
+                "count": 2143,
+                "share": 0.04286
+              },
+              "dncnn": {
+                "count": 37626,
+                "share": 0.75252
+              },
+              "identity": {
+                "count": 6,
+                "share": 0.00012
+              },
+              "jpeg10": {
+                "count": 66,
+                "share": 0.00132
+              },
+              "jpeg20": {
+                "count": 3096,
+                "share": 0.06192
+              }
+            },
+            "default_accuracy": 48.784,
+            "gain": 0.5060000000000009,
+            "n": 50000,
+            "paired_lcb": 0.33140549290746246
+          },
+          "jpeg_compression": {
+            "accuracy": 61.974,
+            "action_distribution": {
+              "config_a": {
+                "count": 1742,
+                "share": 0.03484
+              },
+              "config_a10": {
+                "count": 260,
+                "share": 0.0052
+              },
+              "config_b": {
+                "count": 1129,
+                "share": 0.02258
+              },
+              "dncnn": {
+                "count": 46245,
+                "share": 0.9249
+              },
+              "identity": {
+                "count": 14,
+                "share": 0.00028
+              },
+              "jpeg10": {
+                "count": 84,
+                "share": 0.00168
+              },
+              "jpeg20": {
+                "count": 526,
+                "share": 0.01052
+              }
+            },
+            "default_accuracy": 61.966,
+            "gain": 0.007999999999996898,
+            "n": 50000,
+            "paired_lcb": -0.03080634486008736
+          },
+          "pixelate": {
+            "accuracy": 48.762,
+            "action_distribution": {
+              "config_a": {
+                "count": 6996,
+                "share": 0.13992
+              },
+              "config_a10": {
+                "count": 1087,
+                "share": 0.02174
+              },
+              "config_b": {
+                "count": 6192,
+                "share": 0.12384
+              },
+              "dncnn": {
+                "count": 28331,
+                "share": 0.56662
+              },
+              "identity": {
+                "count": 14,
+                "share": 0.00028
+              },
+              "jpeg10": {
+                "count": 847,
+                "share": 0.01694
+              },
+              "jpeg20": {
+                "count": 6533,
+                "share": 0.13066
+              }
+            },
+            "default_accuracy": 43.578,
+            "gain": 5.183999999999999,
+            "n": 50000,
+            "paired_lcb": 4.923571561546671
+          }
+        }
+      },
+      "validation": {
+        "accuracy": 55.723,
+        "action_distribution": {
+          "config_a": {
+            "count": 7704,
+            "share": 0.07704
+          },
+          "config_a10": {
+            "count": 956,
+            "share": 0.00956
+          },
+          "config_b": {
+            "count": 4922,
+            "share": 0.04922
+          },
+          "dncnn": {
+            "count": 80822,
+            "share": 0.80822
+          },
+          "identity": {
+            "count": 31,
+            "share": 0.00031
+          },
+          "jpeg10": {
+            "count": 516,
+            "share": 0.00516
+          },
+          "jpeg20": {
+            "count": 5049,
+            "share": 0.05049
+          }
+        },
+        "default_accuracy": 54.422000000000004,
+        "gain": 1.3009999999999966,
+        "n": 100000,
+        "paired_lcb": 1.1863088748833381,
+        "per_corruption": {
+          "contrast": {
+            "accuracy": 61.804,
+            "action_distribution": {
+              "config_a": {
+                "count": 52,
+                "share": 0.00208
+              },
+              "config_a10": {
+                "count": 5,
+                "share": 0.0002
+              },
+              "config_b": {
+                "count": 100,
+                "share": 0.004
+              },
+              "dncnn": {
+                "count": 24739,
+                "share": 0.98956
+              },
+              "identity": {
+                "count": 9,
+                "share": 0.00036
+              },
+              "jpeg10": {
+                "count": 1,
+                "share": 4e-05
+              },
+              "jpeg20": {
+                "count": 94,
+                "share": 0.00376
+              }
+            },
+            "default_accuracy": 61.96,
+            "gain": -0.15600000000000058,
+            "n": 25000,
+            "paired_lcb": -0.2130444335197732
+          },
+          "elastic_transform": {
+            "accuracy": 49.936,
+            "action_distribution": {
+              "config_a": {
+                "count": 3305,
+                "share": 0.1322
+              },
+              "config_a10": {
+                "count": 271,
+                "share": 0.01084
+              },
+              "config_b": {
+                "count": 1089,
+                "share": 0.04356
+              },
+              "dncnn": {
+                "count": 18809,
+                "share": 0.75236
+              },
+              "identity": {
+                "count": 2,
+                "share": 8e-05
+              },
+              "jpeg10": {
+                "count": 40,
+                "share": 0.0016
+              },
+              "jpeg20": {
+                "count": 1484,
+                "share": 0.05936
+              }
+            },
+            "default_accuracy": 49.5,
+            "gain": 0.43600000000000305,
+            "n": 25000,
+            "paired_lcb": 0.18043917682549696
+          },
+          "jpeg_compression": {
+            "accuracy": 62.248000000000005,
+            "action_distribution": {
+              "config_a": {
+                "count": 864,
+                "share": 0.03456
+              },
+              "config_a10": {
+                "count": 116,
+                "share": 0.00464
+              },
+              "config_b": {
+                "count": 592,
+                "share": 0.02368
+              },
+              "dncnn": {
+                "count": 23090,
+                "share": 0.9236
+              },
+              "identity": {
+                "count": 12,
+                "share": 0.00048
+              },
+              "jpeg10": {
+                "count": 49,
+                "share": 0.00196
+              },
+              "jpeg20": {
+                "count": 277,
+                "share": 0.01108
+              }
+            },
+            "default_accuracy": 62.28399999999999,
+            "gain": -0.035999999999991594,
+            "n": 25000,
+            "paired_lcb": -0.09087928316664526
+          },
+          "pixelate": {
+            "accuracy": 48.903999999999996,
+            "action_distribution": {
+              "config_a": {
+                "count": 3483,
+                "share": 0.13932
+              },
+              "config_a10": {
+                "count": 564,
+                "share": 0.02256
+              },
+              "config_b": {
+                "count": 3141,
+                "share": 0.12564
+              },
+              "dncnn": {
+                "count": 14184,
+                "share": 0.56736
+              },
+              "identity": {
+                "count": 8,
+                "share": 0.00032
+              },
+              "jpeg10": {
+                "count": 426,
+                "share": 0.01704
+              },
+              "jpeg20": {
+                "count": 3194,
+                "share": 0.12776
+              }
+            },
+            "default_accuracy": 43.944,
+            "gain": 4.959999999999997,
+            "n": 25000,
+            "paired_lcb": 4.59105451599402
+          }
+        }
+      }
+    },
+    "logistic_confidence": {
+      "feature_set": "confidence",
+      "policy": "logistic_confidence",
+      "selected": {
+        "checkpoint": "github_package\\data\\derived_imagenetc_router\\router_confidence.pt",
+        "tau": 0.01
+      },
+      "test": {
+        "accuracy": 55.015499999999996,
+        "action_distribution": {
+          "config_a": {
+            "count": 9646,
+            "share": 0.04823
+          },
+          "config_a10": {
+            "count": 107,
+            "share": 0.000535
+          },
+          "config_b": {
+            "count": 12514,
+            "share": 0.06257
+          },
+          "dncnn": {
+            "count": 158865,
+            "share": 0.794325
+          },
+          "identity": {
+            "count": 7999,
+            "share": 0.039995
+          },
+          "jpeg10": {
+            "count": 55,
+            "share": 0.000275
+          },
+          "jpeg20": {
+            "count": 10814,
+            "share": 0.05407
+          }
+        },
+        "default_accuracy": 53.99850000000001,
+        "gain": 1.0169999999999901,
+        "n": 200000,
+        "paired_lcb": 0.9435631241012956,
+        "per_corruption": {
+          "contrast": {
+            "accuracy": 60.516000000000005,
+            "action_distribution": {
+              "config_a": {
+                "count": 832,
+                "share": 0.01664
+              },
+              "config_a10": {
+                "count": 23,
+                "share": 0.00046
+              },
+              "config_b": {
+                "count": 1184,
+                "share": 0.02368
+              },
+              "dncnn": {
+                "count": 42732,
+                "share": 0.85464
+              },
+              "identity": {
+                "count": 3457,
+                "share": 0.06914
+              },
+              "jpeg10": {
+                "count": 10,
+                "share": 0.0002
+              },
+              "jpeg20": {
+                "count": 1762,
+                "share": 0.03524
+              }
+            },
+            "default_accuracy": 61.666,
+            "gain": -1.1499999999999955,
+            "n": 50000,
+            "paired_lcb": -1.2532978677853022
+          },
+          "elastic_transform": {
+            "accuracy": 49.364000000000004,
+            "action_distribution": {
+              "config_a": {
+                "count": 2942,
+                "share": 0.05884
+              },
+              "config_a10": {
+                "count": 16,
+                "share": 0.00032
+              },
+              "config_b": {
+                "count": 3218,
+                "share": 0.06436
+              },
+              "dncnn": {
+                "count": 37802,
+                "share": 0.75604
+              },
+              "identity": {
+                "count": 1776,
+                "share": 0.03552
+              },
+              "jpeg10": {
+                "count": 6,
+                "share": 0.00012
+              },
+              "jpeg20": {
+                "count": 4240,
+                "share": 0.0848
+              }
+            },
+            "default_accuracy": 48.784,
+            "gain": 0.5800000000000027,
+            "n": 50000,
+            "paired_lcb": 0.4260508222750558
+          },
+          "jpeg_compression": {
+            "accuracy": 61.914,
+            "action_distribution": {
+              "config_a": {
+                "count": 991,
+                "share": 0.01982
+              },
+              "config_a10": {
+                "count": 1,
+                "share": 2e-05
+              },
+              "config_b": {
+                "count": 2107,
+                "share": 0.04214
+              },
+              "dncnn": {
+                "count": 44999,
+                "share": 0.89998
+              },
+              "identity": {
+                "count": 1020,
+                "share": 0.0204
+              },
+              "jpeg10": {
+                "count": 1,
+                "share": 2e-05
+              },
+              "jpeg20": {
+                "count": 881,
+                "share": 0.01762
+              }
+            },
+            "default_accuracy": 61.966,
+            "gain": -0.051999999999996493,
+            "n": 50000,
+            "paired_lcb": -0.08835009041052658
+          },
+          "pixelate": {
+            "accuracy": 48.268,
+            "action_distribution": {
+              "config_a": {
+                "count": 4881,
+                "share": 0.09762
+              },
+              "config_a10": {
+                "count": 67,
+                "share": 0.00134
+              },
+              "config_b": {
+                "count": 6005,
+                "share": 0.1201
+              },
+              "dncnn": {
+                "count": 33332,
+                "share": 0.66664
+              },
+              "identity": {
+                "count": 1746,
+                "share": 0.03492
+              },
+              "jpeg10": {
+                "count": 38,
+                "share": 0.00076
+              },
+              "jpeg20": {
+                "count": 3931,
+                "share": 0.07862
+              }
+            },
+            "default_accuracy": 43.578,
+            "gain": 4.6899999999999995,
+            "n": 50000,
+            "paired_lcb": 4.468421730344802
+          }
+        }
+      },
+      "validation": {
+        "accuracy": 55.423,
+        "action_distribution": {
+          "config_a": {
+            "count": 4917,
+            "share": 0.04917
+          },
+          "config_a10": {
+            "count": 59,
+            "share": 0.00059
+          },
+          "config_b": {
+            "count": 6220,
+            "share": 0.0622
+          },
+          "dncnn": {
+            "count": 79561,
+            "share": 0.79561
+          },
+          "identity": {
+            "count": 4065,
+            "share": 0.04065
+          },
+          "jpeg10": {
+            "count": 35,
+            "share": 0.00035
+          },
+          "jpeg20": {
+            "count": 5143,
+            "share": 0.05143
+          }
+        },
+        "default_accuracy": 54.422000000000004,
+        "gain": 1.0009999999999963,
+        "n": 100000,
+        "paired_lcb": 0.8975274461739833,
+        "per_corruption": {
+          "contrast": {
+            "accuracy": 60.836,
+            "action_distribution": {
+              "config_a": {
+                "count": 424,
+                "share": 0.01696
+              },
+              "config_a10": {
+                "count": 18,
+                "share": 0.00072
+              },
+              "config_b": {
+                "count": 551,
+                "share": 0.02204
+              },
+              "dncnn": {
+                "count": 21455,
+                "share": 0.8582
+              },
+              "identity": {
+                "count": 1740,
+                "share": 0.0696
+              },
+              "jpeg10": {
+                "count": 6,
+                "share": 0.00024
+              },
+              "jpeg20": {
+                "count": 806,
+                "share": 0.03224
+              }
+            },
+            "default_accuracy": 61.96,
+            "gain": -1.1240000000000028,
+            "n": 25000,
+            "paired_lcb": -1.2693797551286423
+          },
+          "elastic_transform": {
+            "accuracy": 50.12,
+            "action_distribution": {
+              "config_a": {
+                "count": 1511,
+                "share": 0.06044
+              },
+              "config_a10": {
+                "count": 13,
+                "share": 0.00052
+              },
+              "config_b": {
+                "count": 1674,
+                "share": 0.06696
+              },
+              "dncnn": {
+                "count": 18887,
+                "share": 0.75548
+              },
+              "identity": {
+                "count": 926,
+                "share": 0.03704
+              },
+              "jpeg10": {
+                "count": 4,
+                "share": 0.00016
+              },
+              "jpeg20": {
+                "count": 1985,
+                "share": 0.0794
+              }
+            },
+            "default_accuracy": 49.5,
+            "gain": 0.6199999999999983,
+            "n": 25000,
+            "paired_lcb": 0.3979644615165987
+          },
+          "jpeg_compression": {
+            "accuracy": 62.239999999999995,
+            "action_distribution": {
+              "config_a": {
+                "count": 543,
+                "share": 0.02172
+              },
+              "config_a10": {
+                "count": 1,
+                "share": 4e-05
+              },
+              "config_b": {
+                "count": 970,
+                "share": 0.0388
+              },
+              "dncnn": {
+                "count": 22471,
+                "share": 0.89884
+              },
+              "identity": {
+                "count": 543,
+                "share": 0.02172
+              },
+              "jpeg10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg20": {
+                "count": 472,
+                "share": 0.01888
+              }
+            },
+            "default_accuracy": 62.28399999999999,
+            "gain": -0.043999999999999595,
+            "n": 25000,
+            "paired_lcb": -0.09540845280356905
+          },
+          "pixelate": {
+            "accuracy": 48.496,
+            "action_distribution": {
+              "config_a": {
+                "count": 2439,
+                "share": 0.09756
+              },
+              "config_a10": {
+                "count": 27,
+                "share": 0.00108
+              },
+              "config_b": {
+                "count": 3025,
+                "share": 0.121
+              },
+              "dncnn": {
+                "count": 16748,
+                "share": 0.66992
+              },
+              "identity": {
+                "count": 856,
+                "share": 0.03424
+              },
+              "jpeg10": {
+                "count": 25,
+                "share": 0.001
+              },
+              "jpeg20": {
+                "count": 1880,
+                "share": 0.0752
+              }
+            },
+            "default_accuracy": 43.944,
+            "gain": 4.5520000000000005,
+            "n": 25000,
+            "paired_lcb": 4.243113916524155
+          }
+        }
+      }
+    },
+    "logistic_spectral": {
+      "feature_set": "spectral",
+      "policy": "logistic_spectral",
+      "selected": {
+        "checkpoint": "github_package\\data\\derived_imagenetc_router\\router_spectral.pt",
+        "tau": 0.03
+      },
+      "test": {
+        "accuracy": 54.603500000000004,
+        "action_distribution": {
+          "config_a": {
+            "count": 28997,
+            "share": 0.144985
+          },
+          "config_a10": {
+            "count": 1318,
+            "share": 0.00659
+          },
+          "config_b": {
+            "count": 4997,
+            "share": 0.024985
+          },
+          "dncnn": {
+            "count": 160466,
+            "share": 0.80233
+          },
+          "identity": {
+            "count": 36,
+            "share": 0.00018
+          },
+          "jpeg10": {
+            "count": 1230,
+            "share": 0.00615
+          },
+          "jpeg20": {
+            "count": 2956,
+            "share": 0.01478
+          }
+        },
+        "default_accuracy": 53.99850000000001,
+        "gain": 0.605,
+        "n": 200000,
+        "paired_lcb": 0.5286686949925482,
+        "per_corruption": {
+          "contrast": {
+            "accuracy": 61.6,
+            "action_distribution": {
+              "config_a": {
+                "count": 181,
+                "share": 0.00362
+              },
+              "config_a10": {
+                "count": 2,
+                "share": 4e-05
+              },
+              "config_b": {
+                "count": 10,
+                "share": 0.0002
+              },
+              "dncnn": {
+                "count": 49782,
+                "share": 0.99564
+              },
+              "identity": {
+                "count": 16,
+                "share": 0.00032
+              },
+              "jpeg10": {
+                "count": 3,
+                "share": 6e-05
+              },
+              "jpeg20": {
+                "count": 6,
+                "share": 0.00012
+              }
+            },
+            "default_accuracy": 61.666,
+            "gain": -0.06599999999999939,
+            "n": 50000,
+            "paired_lcb": -0.09506603200459825
+          },
+          "elastic_transform": {
+            "accuracy": 48.238,
+            "action_distribution": {
+              "config_a": {
+                "count": 12387,
+                "share": 0.24774
+              },
+              "config_a10": {
+                "count": 140,
+                "share": 0.0028
+              },
+              "config_b": {
+                "count": 299,
+                "share": 0.00598
+              },
+              "dncnn": {
+                "count": 36891,
+                "share": 0.73782
+              },
+              "identity": {
+                "count": 2,
+                "share": 4e-05
+              },
+              "jpeg10": {
+                "count": 14,
+                "share": 0.00028
+              },
+              "jpeg20": {
+                "count": 267,
+                "share": 0.00534
+              }
+            },
+            "default_accuracy": 48.784,
+            "gain": -0.546000000000002,
+            "n": 50000,
+            "paired_lcb": -0.716758519321662
+          },
+          "jpeg_compression": {
+            "accuracy": 61.974,
+            "action_distribution": {
+              "config_a": {
+                "count": 3528,
+                "share": 0.07056
+              },
+              "config_a10": {
+                "count": 252,
+                "share": 0.00504
+              },
+              "config_b": {
+                "count": 419,
+                "share": 0.00838
+              },
+              "dncnn": {
+                "count": 45651,
+                "share": 0.91302
+              },
+              "identity": {
+                "count": 18,
+                "share": 0.00036
+              },
+              "jpeg10": {
+                "count": 76,
+                "share": 0.00152
+              },
+              "jpeg20": {
+                "count": 56,
+                "share": 0.00112
+              }
+            },
+            "default_accuracy": 61.966,
+            "gain": 0.007999999999996898,
+            "n": 50000,
+            "paired_lcb": -0.030006125454503273
+          },
+          "pixelate": {
+            "accuracy": 46.602,
+            "action_distribution": {
+              "config_a": {
+                "count": 12901,
+                "share": 0.25802
+              },
+              "config_a10": {
+                "count": 924,
+                "share": 0.01848
+              },
+              "config_b": {
+                "count": 4269,
+                "share": 0.08538
+              },
+              "dncnn": {
+                "count": 28142,
+                "share": 0.56284
+              },
+              "identity": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg10": {
+                "count": 1137,
+                "share": 0.02274
+              },
+              "jpeg20": {
+                "count": 2627,
+                "share": 0.05254
+              }
+            },
+            "default_accuracy": 43.578,
+            "gain": 3.023999999999999,
+            "n": 50000,
+            "paired_lcb": 2.776686931983285
+          }
+        }
+      },
+      "validation": {
+        "accuracy": 54.885,
+        "action_distribution": {
+          "config_a": {
+            "count": 14651,
+            "share": 0.14651
+          },
+          "config_a10": {
+            "count": 704,
+            "share": 0.00704
+          },
+          "config_b": {
+            "count": 2515,
+            "share": 0.02515
+          },
+          "dncnn": {
+            "count": 79962,
+            "share": 0.79962
+          },
+          "identity": {
+            "count": 34,
+            "share": 0.00034
+          },
+          "jpeg10": {
+            "count": 648,
+            "share": 0.00648
+          },
+          "jpeg20": {
+            "count": 1486,
+            "share": 0.01486
+          }
+        },
+        "default_accuracy": 54.422000000000004,
+        "gain": 0.4629999999999912,
+        "n": 100000,
+        "paired_lcb": 0.3532944798403128,
+        "per_corruption": {
+          "contrast": {
+            "accuracy": 61.924,
+            "action_distribution": {
+              "config_a": {
+                "count": 79,
+                "share": 0.00316
+              },
+              "config_a10": {
+                "count": 3,
+                "share": 0.00012
+              },
+              "config_b": {
+                "count": 4,
+                "share": 0.00016
+              },
+              "dncnn": {
+                "count": 24891,
+                "share": 0.99564
+              },
+              "identity": {
+                "count": 17,
+                "share": 0.00068
+              },
+              "jpeg10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg20": {
+                "count": 6,
+                "share": 0.00024
+              }
+            },
+            "default_accuracy": 61.96,
+            "gain": -0.036000000000002697,
+            "n": 25000,
+            "paired_lcb": -0.06832271402233529
+          },
+          "elastic_transform": {
+            "accuracy": 48.676,
+            "action_distribution": {
+              "config_a": {
+                "count": 6248,
+                "share": 0.24992
+              },
+              "config_a10": {
+                "count": 84,
+                "share": 0.00336
+              },
+              "config_b": {
+                "count": 151,
+                "share": 0.00604
+              },
+              "dncnn": {
+                "count": 18370,
+                "share": 0.7348
+              },
+              "identity": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg10": {
+                "count": 8,
+                "share": 0.00032
+              },
+              "jpeg20": {
+                "count": 139,
+                "share": 0.00556
+              }
+            },
+            "default_accuracy": 49.5,
+            "gain": -0.823999999999997,
+            "n": 25000,
+            "paired_lcb": -1.081928356939342
+          },
+          "jpeg_compression": {
+            "accuracy": 62.28,
+            "action_distribution": {
+              "config_a": {
+                "count": 1797,
+                "share": 0.07188
+              },
+              "config_a10": {
+                "count": 150,
+                "share": 0.006
+              },
+              "config_b": {
+                "count": 239,
+                "share": 0.00956
+              },
+              "dncnn": {
+                "count": 22720,
+                "share": 0.9088
+              },
+              "identity": {
+                "count": 17,
+                "share": 0.00068
+              },
+              "jpeg10": {
+                "count": 41,
+                "share": 0.00164
+              },
+              "jpeg20": {
+                "count": 36,
+                "share": 0.00144
+              }
+            },
+            "default_accuracy": 62.28399999999999,
+            "gain": -0.003999999999992898,
+            "n": 25000,
+            "paired_lcb": -0.0516897862650333
+          },
+          "pixelate": {
+            "accuracy": 46.660000000000004,
+            "action_distribution": {
+              "config_a": {
+                "count": 6527,
+                "share": 0.26108
+              },
+              "config_a10": {
+                "count": 467,
+                "share": 0.01868
+              },
+              "config_b": {
+                "count": 2121,
+                "share": 0.08484
+              },
+              "dncnn": {
+                "count": 13981,
+                "share": 0.55924
+              },
+              "identity": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg10": {
+                "count": 599,
+                "share": 0.02396
+              },
+              "jpeg20": {
+                "count": 1305,
+                "share": 0.0522
+              }
+            },
+            "default_accuracy": 43.944,
+            "gain": 2.716000000000002,
+            "n": 25000,
+            "paired_lcb": 2.367262073387373
+          }
+        }
+      }
+    },
+    "two_threshold": {
+      "policy": "two_threshold",
+      "selected": {
+        "theta_high": 0.28,
+        "theta_low": 0.0
+      },
+      "test": {
+        "accuracy": 53.99549999999999,
+        "action_distribution": {
+          "config_a": {
+            "count": 24,
+            "share": 0.00012
+          },
+          "config_a10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "config_b": {
+            "count": 0,
+            "share": 0.0
+          },
+          "dncnn": {
+            "count": 199976,
+            "share": 0.99988
+          },
+          "identity": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg20": {
+            "count": 0,
+            "share": 0.0
+          }
+        },
+        "default_accuracy": 53.99850000000001,
+        "gain": -0.0030000000000085514,
+        "n": 200000,
+        "paired_lcb": -0.005771834328261289,
+        "per_corruption": {
+          "contrast": {
+            "accuracy": 61.651999999999994,
+            "action_distribution": {
+              "config_a": {
+                "count": 14,
+                "share": 0.00028
+              },
+              "config_a10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_b": {
+                "count": 0,
+                "share": 0.0
+              },
+              "dncnn": {
+                "count": 49986,
+                "share": 0.99972
+              },
+              "identity": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg20": {
+                "count": 0,
+                "share": 0.0
+              }
+            },
+            "default_accuracy": 61.666,
+            "gain": -0.014000000000002899,
+            "n": 50000,
+            "paired_lcb": -0.02437072282754868
+          },
+          "elastic_transform": {
+            "accuracy": 48.784,
+            "action_distribution": {
+              "config_a": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_a10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_b": {
+                "count": 0,
+                "share": 0.0
+              },
+              "dncnn": {
+                "count": 50000,
+                "share": 1.0
+              },
+              "identity": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg20": {
+                "count": 0,
+                "share": 0.0
+              }
+            },
+            "default_accuracy": 48.784,
+            "gain": 0.0,
+            "n": 50000,
+            "paired_lcb": 0.0
+          },
+          "jpeg_compression": {
+            "accuracy": 61.966,
+            "action_distribution": {
+              "config_a": {
+                "count": 8,
+                "share": 0.00016
+              },
+              "config_a10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_b": {
+                "count": 0,
+                "share": 0.0
+              },
+              "dncnn": {
+                "count": 49992,
+                "share": 0.99984
+              },
+              "identity": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg20": {
+                "count": 0,
+                "share": 0.0
+              }
+            },
+            "default_accuracy": 61.966,
+            "gain": 0.0,
+            "n": 50000,
+            "paired_lcb": 0.0
+          },
+          "pixelate": {
+            "accuracy": 43.580000000000005,
+            "action_distribution": {
+              "config_a": {
+                "count": 2,
+                "share": 4e-05
+              },
+              "config_a10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_b": {
+                "count": 0,
+                "share": 0.0
+              },
+              "dncnn": {
+                "count": 49998,
+                "share": 0.99996
+              },
+              "identity": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg20": {
+                "count": 0,
+                "share": 0.0
+              }
+            },
+            "default_accuracy": 43.578,
+            "gain": 0.002000000000002,
+            "n": 50000,
+            "paired_lcb": -0.0019200000000000003
+          }
+        }
+      },
+      "validation": {
+        "accuracy": 54.422000000000004,
+        "action_distribution": {
+          "config_a": {
+            "count": 0,
+            "share": 0.0
+          },
+          "config_a10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "config_b": {
+            "count": 0,
+            "share": 0.0
+          },
+          "dncnn": {
+            "count": 100000,
+            "share": 1.0
+          },
+          "identity": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg10": {
+            "count": 0,
+            "share": 0.0
+          },
+          "jpeg20": {
+            "count": 0,
+            "share": 0.0
+          }
+        },
+        "default_accuracy": 54.422000000000004,
+        "gain": 0.0,
+        "n": 100000,
+        "paired_lcb": 0.0,
+        "per_corruption": {
+          "contrast": {
+            "accuracy": 61.96,
+            "action_distribution": {
+              "config_a": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_a10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_b": {
+                "count": 0,
+                "share": 0.0
+              },
+              "dncnn": {
+                "count": 25000,
+                "share": 1.0
+              },
+              "identity": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg20": {
+                "count": 0,
+                "share": 0.0
+              }
+            },
+            "default_accuracy": 61.96,
+            "gain": 0.0,
+            "n": 25000,
+            "paired_lcb": 0.0
+          },
+          "elastic_transform": {
+            "accuracy": 49.5,
+            "action_distribution": {
+              "config_a": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_a10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_b": {
+                "count": 0,
+                "share": 0.0
+              },
+              "dncnn": {
+                "count": 25000,
+                "share": 1.0
+              },
+              "identity": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg20": {
+                "count": 0,
+                "share": 0.0
+              }
+            },
+            "default_accuracy": 49.5,
+            "gain": 0.0,
+            "n": 25000,
+            "paired_lcb": 0.0
+          },
+          "jpeg_compression": {
+            "accuracy": 62.28399999999999,
+            "action_distribution": {
+              "config_a": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_a10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_b": {
+                "count": 0,
+                "share": 0.0
+              },
+              "dncnn": {
+                "count": 25000,
+                "share": 1.0
+              },
+              "identity": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg20": {
+                "count": 0,
+                "share": 0.0
+              }
+            },
+            "default_accuracy": 62.28399999999999,
+            "gain": 0.0,
+            "n": 25000,
+            "paired_lcb": 0.0
+          },
+          "pixelate": {
+            "accuracy": 43.944,
+            "action_distribution": {
+              "config_a": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_a10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "config_b": {
+                "count": 0,
+                "share": 0.0
+              },
+              "dncnn": {
+                "count": 25000,
+                "share": 1.0
+              },
+              "identity": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg10": {
+                "count": 0,
+                "share": 0.0
+              },
+              "jpeg20": {
+                "count": 0,
+                "share": 0.0
+              }
+            },
+            "default_accuracy": 43.944,
+            "gain": 0.0,
+            "n": 25000,
+            "paired_lcb": 0.0
+          }
+        }
+      }
+    }
+  },
+  "schema_version": 1,
+  "start_time_utc": "2026-06-11T08:30:25.016844+00:00"
+}

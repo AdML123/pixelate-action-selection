@@ -1,5 +1,5 @@
 {
-  "command": "code\\evaluate_corruption_detector.py --features-root data\\features --test-features-root data\\features_test --action-csv data\\action_eval\\action_eval.csv --outdir data\\derived\\imagenetc --feature-set all",
+  "command": "code\\evaluate_corruption_detector.py --features-root data\\features --test-features-root data\\features_test --action-csv data\\action_eval\\action_eval.csv.gz --outdir data\\derived\\imagenetc",
   "diagnostic_true_label_oracle": {
     "accuracy": 55.610499999999995,
     "action_distribution": {
@@ -192,8 +192,8 @@
       }
     }
   },
-  "elapsed_seconds": 2.599,
-  "end_time_utc": "2026-06-12T04:27:01.456766+00:00",
+  "elapsed_seconds": 2.611,
+  "end_time_utc": "2026-06-12T11:36:47.626518+00:00",
   "environment": {
     "platform": "Windows-10-10.0.26200-SP0",
     "python": "3.10.20"
@@ -229,7 +229,7 @@
       "pixelate": "config_a"
     }
   },
-  "start_time_utc": "2026-06-12T04:26:58.857288+00:00",
+  "start_time_utc": "2026-06-12T11:36:45.013813+00:00",
   "test": {
     "accuracy": 55.1875,
     "action_distribution": {

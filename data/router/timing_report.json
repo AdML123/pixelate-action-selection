@@ -1,0 +1,65 @@
+{
+  "command": "github_package\\code\\measure_latency.py --digital-root <LOCAL_IMAGENETC_DIGITAL_ROOT> --outdir github_package\\data\\derived_imagenetc_router --dncnn-checkpoint <LOCAL_DNCNN_COLOR_BLIND_CHECKPOINT> --resnet50-checkpoint <LOCAL_RESNET50_CHECKPOINT> --warmup 50 --measure 200",
+  "elapsed_seconds": 81.388,
+  "end_time_utc": "2026-06-11T08:41:37.061104+00:00",
+  "environment": {
+    "cuda_available": true,
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce RTX 5060 Ti",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python": "3.10.20",
+    "torch": "2.11.0+cu128"
+  },
+  "parameters": {
+    "batch_size": 1,
+    "measure": 200,
+    "warmup": 50
+  },
+  "resources": {
+    "digital_root": "<LOCAL_IMAGENETC_DIGITAL_ROOT>",
+    "dncnn_checkpoint": "<LOCAL_DNCNN_COLOR_BLIND_CHECKPOINT>",
+    "dncnn_checkpoint_sha256": "dfe11a6b703304df82cdf236f431fc6492766c7b9119d97e943edeb392c710a3",
+    "resnet50_checkpoint": "<LOCAL_RESNET50_CHECKPOINT>",
+    "resnet50_checkpoint_sha256": "11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca",
+    "router_checkpoint": "data/router\\router_all.pt"
+  },
+  "results": {
+    "config_a": {
+      "mean_ms": 15.855467499641236,
+      "median_ms": 14.839800001936965,
+      "n": 200,
+      "p25_ms": 13.309500012837816,
+      "p75_ms": 18.543124991992954
+    },
+    "config_b": {
+      "mean_ms": 21.156572998588672,
+      "median_ms": 21.58899999631103,
+      "n": 200,
+      "p25_ms": 17.49587501399219,
+      "p75_ms": 23.68497498537181
+    },
+    "default_dncnn": {
+      "mean_ms": 15.222227499907603,
+      "median_ms": 15.075399991474114,
+      "n": 200,
+      "p25_ms": 14.636899984907359,
+      "p75_ms": 15.610324997396674
+    },
+    "oracle_eval": {
+      "mean_ms": 183.22123899983126,
+      "median_ms": 182.9291499889223,
+      "n": 200,
+      "p25_ms": 180.30765000003157,
+      "p75_ms": 186.63022499822546
+    },
+    "router": {
+      "mean_ms": 80.52756150063942,
+      "median_ms": 80.26100001006853,
+      "n": 200,
+      "p25_ms": 79.54602500103647,
+      "p75_ms": 81.44827500655083
+    }
+  },
+  "schema_version": 1,
+  "start_time_utc": "2026-06-11T08:40:15.673138+00:00"
+}

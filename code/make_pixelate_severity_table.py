@@ -7,6 +7,7 @@ from pathlib import Path
 import numpy as np
 
 from pixelate_router.features_imagenetc import FEATURE_NAMES
+from pixelate_router.io import open_text
 from pixelate_router.router import paired_lcb, select_with_threshold
 from train_router import ACTIONS
 
@@ -101,7 +102,7 @@ def write_csv(path: Path, rows: list[dict]) -> None:
 
 def _action_rows(action_csv: str) -> dict[int, list[dict]]:
     rows = {severity: [] for severity in [1, 2, 3, 4, 5]}
-    with Path(action_csv).open(newline="", encoding="utf-8") as handle:
+    with open_text(action_csv, newline="", encoding="utf-8") as handle:
         for row in csv.DictReader(handle):
             if row["split"] == "test" and row["corruption"] == "pixelate":
                 rows[int(row["severity"])].append(row)
