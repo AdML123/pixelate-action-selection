@@ -1,5 +1,5 @@
 {
-  "command": "github_package\\code\\measure_latency.py --digital-root <LOCAL_IMAGENETC_DIGITAL_ROOT> --outdir github_package\\data\\derived_imagenetc_router --dncnn-checkpoint <LOCAL_DNCNN_COLOR_BLIND_CHECKPOINT> --resnet50-checkpoint <LOCAL_RESNET50_CHECKPOINT> --warmup 50 --measure 200",
+  "command": "code/measure_latency.py --digital-root <LOCAL_IMAGENETC_DIGITAL_ROOT> --outdir data/router --dncnn-checkpoint <LOCAL_DNCNN_COLOR_BLIND_CHECKPOINT> --resnet50-checkpoint <LOCAL_RESNET50_CHECKPOINT> --warmup 50 --measure 200",
   "elapsed_seconds": 81.388,
   "end_time_utc": "2026-06-11T08:41:37.061104+00:00",
   "environment": {
@@ -21,7 +21,7 @@
     "dncnn_checkpoint_sha256": "dfe11a6b703304df82cdf236f431fc6492766c7b9119d97e943edeb392c710a3",
     "resnet50_checkpoint": "<LOCAL_RESNET50_CHECKPOINT>",
     "resnet50_checkpoint_sha256": "11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca",
-    "router_checkpoint": "data/router\\router_all.pt"
+    "router_checkpoint": "data/router/router_all.pt"
   },
   "results": {
     "config_a": {

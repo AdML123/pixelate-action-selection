@@ -1,5 +1,5 @@
 {
-  "command": "github_package\\code\\run_loco.py --features-root github_package\\data\\derived_imagenetc_features --action-csv github_package\\data\\derived_imagenetc_action_eval\\action_eval.csv --outdir github_package\\data\\derived_imagenetc_router --epochs 50 --batch-size 256 --lr 1e-3",
+  "command": "code/run_loco.py --features-root data/features --action-csv data/action_eval/action_eval.csv.gz --outdir data/router --epochs 50 --batch-size 256 --lr 1e-3",
   "default_action": "dncnn",
   "elapsed_seconds": 17.464,
   "end_time_utc": "2026-06-11T08:35:07.125723+00:00",
@@ -46,7 +46,7 @@
         }
       },
       "best_validation_loss": 0.49288445711135864,
-      "checkpoint": "github_package\\data\\derived_imagenetc_router\\loco_router_holdout_contrast.pt",
+      "checkpoint": "data/router/loco_router_holdout_contrast.pt",
       "default_accuracy": 61.96,
       "epochs_ran": 20,
       "gain": -0.22000000000000908,
@@ -464,7 +464,7 @@
         }
       },
       "best_validation_loss": 0.5230729579925537,
-      "checkpoint": "github_package\\data\\derived_imagenetc_router\\loco_router_holdout_elastic_transform.pt",
+      "checkpoint": "data/router/loco_router_holdout_elastic_transform.pt",
       "default_accuracy": 49.5,
       "epochs_ran": 50,
       "gain": 0.31200000000000117,
@@ -1032,7 +1032,7 @@
         }
       },
       "best_validation_loss": 0.5648496747016907,
-      "checkpoint": "github_package\\data\\derived_imagenetc_router\\loco_router_holdout_jpeg_compression.pt",
+      "checkpoint": "data/router/loco_router_holdout_jpeg_compression.pt",
       "default_accuracy": 62.28399999999999,
       "epochs_ran": 13,
       "gain": 0.008000000000008,
@@ -1415,7 +1415,7 @@
         }
       },
       "best_validation_loss": 0.5237883925437927,
-      "checkpoint": "github_package\\data\\derived_imagenetc_router\\loco_router_holdout_pixelate.pt",
+      "checkpoint": "data/router/loco_router_holdout_pixelate.pt",
       "default_accuracy": 43.944,
       "epochs_ran": 14,
       "gain": 3.8080000000000003,

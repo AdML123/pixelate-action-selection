@@ -1,5 +1,5 @@
 {
-  "command": "github_package\\code\\evaluate_router.py --features-root github_package\\data\\derived_imagenetc_features --test-features-root github_package\\data\\derived_imagenetc_features_test --action-csv github_package\\data\\derived_imagenetc_action_eval\\action_eval.csv --router-dir github_package\\data\\derived_imagenetc_router --outdir github_package\\data\\derived_imagenetc_router",
+  "command": "code/evaluate_router.py --features-root data/features --test-features-root data/features_test --action-csv data/action_eval/action_eval.csv.gz --router-dir data/router --outdir data/router",
   "default_action": "dncnn",
   "elapsed_seconds": 102.482,
   "end_time_utc": "2026-06-11T08:32:07.499537+00:00",
@@ -1185,7 +1185,7 @@
       "feature_set": "all",
       "policy": "logistic_all",
       "selected": {
-        "checkpoint": "github_package\\data\\derived_imagenetc_router\\router_all.pt",
+        "checkpoint": "data/router/router_all.pt",
         "tau": 0.03
       },
       "test": {
@@ -1567,7 +1567,7 @@
       "feature_set": "confidence",
       "policy": "logistic_confidence",
       "selected": {
-        "checkpoint": "github_package\\data\\derived_imagenetc_router\\router_confidence.pt",
+        "checkpoint": "data/router/router_confidence.pt",
         "tau": 0.01
       },
       "test": {
@@ -1949,7 +1949,7 @@
       "feature_set": "spectral",
       "policy": "logistic_spectral",
       "selected": {
-        "checkpoint": "github_package\\data\\derived_imagenetc_router\\router_spectral.pt",
+        "checkpoint": "data/router/router_spectral.pt",
         "tau": 0.03
       },
       "test": {
