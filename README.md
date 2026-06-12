@@ -7,9 +7,8 @@ DnCNN-only default, while contrast, elastic transform, and JPEG compression
 serve as controls.
 
 The public repository is `https://github.com/AdML123/pixelate-action-selection`.
-The camera-ready reproduction state is tagged as
-`v2026-06-12-camera-ready`; after cloning, `git rev-parse HEAD` records the
-exact commit for that public result snapshot.
+After cloning the public repository, run `git rev-parse HEAD` to record the
+exact commit used for a review or camera-ready result snapshot.
 
 The compact JSON and CSV files under `data/derived/imagenetc/` and
 `data/source/` are sufficient to regenerate the numerical tables and the
