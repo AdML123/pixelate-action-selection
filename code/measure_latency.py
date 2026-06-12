@@ -12,10 +12,10 @@ from pathlib import Path
 import numpy as np
 
 from oracle_ceiling import IMAGENET_MEAN, IMAGENET_STD, load_dncnn, load_resnet50, load_rgb_float, sha256_file
-from paper34.features_imagenetc import feature_row
-from paper34.imagenet_actions import jpeg_roundtrip
-from paper34.imagenetc_digital import iter_image_records
-from paper34.router import select_with_threshold
+from pixelate_router.features_imagenetc import feature_row
+from pixelate_router.imagenet_actions import jpeg_roundtrip
+from pixelate_router.imagenetc_digital import iter_image_records
+from pixelate_router.router import select_with_threshold
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -51,7 +51,7 @@ def run(args: argparse.Namespace) -> dict:
         "config_a": lambda: _config_a(image, dncnn, resnet, torch, device),
         "config_b": lambda: _config_b(image, dncnn, resnet, torch, device),
         "oracle_eval": lambda: _oracle_eval(image, dncnn, resnet, torch, device),
-        "bandit": lambda: _bandit(image, dncnn, resnet, router_model, router_meta, torch, device),
+        "router": lambda: _router_path(image, dncnn, resnet, router_model, router_meta, torch, device),
     }
     results = {}
     for name, fn in modes.items():
@@ -162,7 +162,7 @@ def _oracle_eval(image, dncnn, resnet, torch, device):
     return actions
 
 
-def _bandit(image, dncnn, resnet, router_model, router_meta, torch, device):
+def _router_path(image, dncnn, resnet, router_model, router_meta, torch, device):
     jpeg20 = jpeg_roundtrip(image, quality=20)
     with torch.inference_mode():
         identity = _nchw_tensor(image[None, ...], torch, device)
@@ -211,7 +211,7 @@ def _load_router(path, torch, device):
     model = torch.nn.Linear(len(checkpoint["feature_names"]), len(checkpoint["actions"])).to(device)
     model.load_state_dict(checkpoint["model_state_dict"])
     model.eval()
-    from paper34.features_imagenetc import FEATURE_NAMES
+    from pixelate_router.features_imagenetc import FEATURE_NAMES
 
     meta = {
         "actions": checkpoint["actions"],

@@ -8,10 +8,10 @@ from pathlib import Path
 
 import numpy as np
 
-from paper34.features_imagenetc import FEATURE_NAMES
+from pixelate_router.features_imagenetc import FEATURE_NAMES
 from oracle_ceiling import load_rgb_float
-from paper34.router import select_with_threshold
-from paper34.imagenetc_digital import iter_image_records
+from pixelate_router.router import select_with_threshold
+from pixelate_router.imagenetc_digital import iter_image_records
 
 
 CORRUPTION_LABELS = {
@@ -630,11 +630,11 @@ def _action_rows(action_csv: str, corr: str) -> dict[int, list[dict]]:
 
 
 def _load(path: str) -> dict:
-    return json.loads(Path(path).read_text(encoding="utf-8"))
+    return json.loads(Path(path).read_text(encoding="utf-8-sig"))
 
 
 def _read_csv_rows(path: Path) -> list[dict]:
-    with Path(path).open(newline="", encoding="utf-8") as handle:
+    with Path(path).open(newline="", encoding="utf-8-sig") as handle:
         return list(csv.DictReader(handle))
 
 

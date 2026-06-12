@@ -3,7 +3,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "code"))
 
-from paper34.draft_audit import find_unresolved_markers
+from pixelate_router.draft_audit import find_unresolved_markers
 
 
 def _optional_latex_source() -> str | None:

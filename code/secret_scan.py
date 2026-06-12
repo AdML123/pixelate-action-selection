@@ -1,7 +1,7 @@
 import argparse
 from pathlib import Path
 
-from paper34.security import scan_text
+from pixelate_router.security import scan_text
 
 
 def iter_text_files(root: Path):

@@ -6,7 +6,7 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "code"))
 
-from paper34.draft_audit import find_unresolved_markers
+from pixelate_router.draft_audit import find_unresolved_markers
 
 
 def _find_latex_main() -> Path:
@@ -101,7 +101,7 @@ def test_reproducibility_note_is_inline():
 
     assert r"\subsection{Reproducibility}" not in text
     assert r"\section*{Data and Code Availability}" not in text
-    assert "https://github.com/AdML123/paper34-pixelate-router" in text
+    assert "https://github.com/AdML123/pixelate-action-selection" in text
     assert "not redistributed" in text
 
 

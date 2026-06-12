@@ -1,7 +1,7 @@
 import argparse
 from pathlib import Path
 
-from paper34.verify import verify_required_outputs, verify_required_results
+from pixelate_router.verify import verify_required_outputs, verify_required_results
 
 
 def main() -> int:

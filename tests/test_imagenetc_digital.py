@@ -5,7 +5,7 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "code"))
 
-from paper34.imagenetc_digital import (
+from pixelate_router.imagenetc_digital import (
     digital_corruptions,
     iter_image_records,
     parse_val_index,

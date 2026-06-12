@@ -7,7 +7,7 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "code"))
 
-from paper34.figures import (
+from pixelate_router.figures import (
     export_pipeline_diagram,
     export_radial_spectra,
     export_severity_curves,

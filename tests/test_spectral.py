@@ -5,7 +5,7 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "code"))
 
-from paper34.spectral import high_frequency_energy_ratio
+from pixelate_router.spectral import high_frequency_energy_ratio
 
 
 def test_hfer_is_zero_for_constant_image():

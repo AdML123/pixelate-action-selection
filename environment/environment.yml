@@ -1,4 +1,4 @@
-name: paper34
+name: pixelate-action-selection
 channels:
   - pytorch
   - nvidia

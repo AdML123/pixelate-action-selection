@@ -5,7 +5,7 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "code"))
 
-from paper34.verify import REQUIRED_FIGURE_FILES, REQUIRED_RESULT_FILES, REQUIRED_TABLE_FILES, verify_required_outputs, verify_required_results
+from pixelate_router.verify import REQUIRED_FIGURE_FILES, REQUIRED_RESULT_FILES, REQUIRED_TABLE_FILES, verify_required_outputs, verify_required_results
 
 
 def test_verify_required_results_accepts_present_files(tmp_path):

@@ -5,7 +5,7 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "code"))
 
-from paper34.features_imagenetc import (
+from pixelate_router.features_imagenetc import (
     FEATURE_NAMES,
     band_energies,
     confidence_stats,

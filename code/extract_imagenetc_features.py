@@ -19,9 +19,9 @@ from oracle_ceiling import (
     load_rgb_float,
     sha256_file,
 )
-from paper34.features_imagenetc import FEATURE_NAMES, feature_row
-from paper34.imagenet_actions import jpeg_roundtrip
-from paper34.imagenetc_digital import digital_corruptions, iter_image_records
+from pixelate_router.features_imagenetc import FEATURE_NAMES, feature_row
+from pixelate_router.imagenet_actions import jpeg_roundtrip
+from pixelate_router.imagenetc_digital import digital_corruptions, iter_image_records
 
 
 def build_parser() -> argparse.ArgumentParser:

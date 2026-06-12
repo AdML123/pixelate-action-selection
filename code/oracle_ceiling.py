@@ -14,8 +14,8 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 
-from paper34.imagenet_actions import ACTION_NAMES, jpeg_roundtrip, oracle_summary_from_correctness
-from paper34.imagenetc_digital import digital_corruptions, discover_wnids, iter_image_records, select_indices
+from pixelate_router.imagenet_actions import ACTION_NAMES, jpeg_roundtrip, oracle_summary_from_correctness
+from pixelate_router.imagenetc_digital import digital_corruptions, discover_wnids, iter_image_records, select_indices
 
 
 IMAGENET_MEAN = (0.485, 0.456, 0.406)

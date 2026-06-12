@@ -5,7 +5,7 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "code"))
 
-from paper34.transforms import jpeg_roundtrip, uniform_quantize
+from pixelate_router.transforms import jpeg_roundtrip, uniform_quantize
 
 
 def test_uniform_quantize_q4_preserves_shape_and_levels():

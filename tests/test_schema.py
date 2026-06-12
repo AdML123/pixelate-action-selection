@@ -6,7 +6,7 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "code"))
 
-from paper34.schema import validate_accuracy_table
+from pixelate_router.schema import validate_accuracy_table
 
 
 def test_accuracy_table_requires_core_columns():

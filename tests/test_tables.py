@@ -5,7 +5,7 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "code"))
 
-from paper34.tables import compute_config_delta, make_value_map
+from pixelate_router.tables import compute_config_delta, make_value_map
 
 
 def test_compute_config_delta_returns_a_minus_b():

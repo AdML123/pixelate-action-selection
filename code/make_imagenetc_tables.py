@@ -326,7 +326,7 @@ def table_timing(timing: dict) -> str:
         ("Config A", "config_a"),
         ("Config B", "config_b"),
         ("Oracle eval", "oracle_eval"),
-        ("Router", "bandit"),
+        ("Router", "router"),
     ]
     lines = [
         r"\begin{tabular}{lr}",
@@ -341,11 +341,11 @@ def table_timing(timing: dict) -> str:
 
 
 def _load(path: str) -> dict:
-    return json.loads(Path(path).read_text(encoding="utf-8"))
+    return json.loads(Path(path).read_text(encoding="utf-8-sig"))
 
 
 def _read_csv_rows(path: Path) -> list[dict]:
-    with path.open(newline="", encoding="utf-8") as handle:
+    with path.open(newline="", encoding="utf-8-sig") as handle:
         return list(csv.DictReader(handle))
 
 

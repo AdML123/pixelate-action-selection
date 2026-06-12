@@ -6,6 +6,11 @@ offline logistic router improves held-out pixelate classification over a
 DnCNN-only default, while contrast, elastic transform, and JPEG compression
 serve as controls.
 
+The public repository is `https://github.com/AdML123/pixelate-action-selection`.
+The camera-ready reproduction state is tagged as
+`v2026-06-12-camera-ready`; after cloning, `git rev-parse HEAD` records the
+exact commit for that public result snapshot.
+
 The compact JSON and CSV files under `data/derived/imagenetc/` and
 `data/source/` are sufficient to regenerate the numerical tables and the
 aggregate figures. The case figure uses one ImageNet-C pixelate image when a

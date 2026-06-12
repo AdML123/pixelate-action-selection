@@ -3,7 +3,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "code"))
 
-from paper34.security import scan_text
+from pixelate_router.security import scan_text
 from secret_scan import iter_text_files
 
 

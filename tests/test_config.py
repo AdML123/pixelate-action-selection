@@ -3,7 +3,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "code"))
 
-from paper34.config import ResourceConfig
+from pixelate_router.config import ResourceConfig
 
 
 def test_resource_config_resolves_relative_paths(tmp_path):

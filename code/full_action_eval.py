@@ -12,8 +12,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from oracle_ceiling import load_dncnn, load_resnet50, load_rgb_float, predict_action_batch, sha256_file
-from paper34.imagenet_actions import ACTION_NAMES
-from paper34.imagenetc_digital import digital_corruptions, iter_image_records
+from pixelate_router.imagenet_actions import ACTION_NAMES
+from pixelate_router.imagenetc_digital import digital_corruptions, iter_image_records
 
 
 def split_indices() -> dict[str, tuple[int, int]]:

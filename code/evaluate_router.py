@@ -12,8 +12,8 @@ from pathlib import Path
 
 import numpy as np
 
-from paper34.features_imagenetc import FEATURE_NAMES
-from paper34.router import hfer_rule, paired_lcb, select_with_threshold, two_threshold_rule
+from pixelate_router.features_imagenetc import FEATURE_NAMES
+from pixelate_router.router import hfer_rule, paired_lcb, select_with_threshold, two_threshold_rule
 from train_router import ACTIONS, CORRUPTIONS, DEFAULT_ACTION, DEFAULT_INDEX, FEATURE_SETS, SEVERITIES
 
 

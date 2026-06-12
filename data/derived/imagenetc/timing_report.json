@@ -5,7 +5,7 @@
     "warmup": 50
   },
   "results": {
-    "bandit": {
+    "router": {
       "mean_ms": 80.52756150063942,
       "median_ms": 80.26100001006853,
       "n": 200,

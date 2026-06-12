@@ -5,7 +5,7 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "code"))
 
-from paper34.router import hfer_rule, paired_lcb, select_with_threshold, two_threshold_rule
+from pixelate_router.router import hfer_rule, paired_lcb, select_with_threshold, two_threshold_rule
 
 
 def test_select_with_threshold_keeps_default_when_gain_is_small():

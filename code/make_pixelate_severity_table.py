@@ -6,8 +6,8 @@ from pathlib import Path
 
 import numpy as np
 
-from paper34.features_imagenetc import FEATURE_NAMES
-from paper34.router import paired_lcb, select_with_threshold
+from pixelate_router.features_imagenetc import FEATURE_NAMES
+from pixelate_router.router import paired_lcb, select_with_threshold
 from train_router import ACTIONS
 
 

@@ -5,7 +5,7 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "code"))
 
-from paper34.imagenet_actions import ACTION_NAMES, jpeg_roundtrip, oracle_summary_from_correctness
+from pixelate_router.imagenet_actions import ACTION_NAMES, jpeg_roundtrip, oracle_summary_from_correctness
 
 
 def test_action_names_are_stable():
