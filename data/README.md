@@ -35,7 +35,6 @@ data/
     table_pixelate_severity.csv
 ```
 
-Raw ImageNet-C images, model checkpoints, per-image action CSV files, feature
 Raw ImageNet-C images and external model checkpoints are not redistributed.
 The included per-image action outputs, feature matrices, and trained router
 checkpoints are derived artifacts used to recompute the reported tables and
